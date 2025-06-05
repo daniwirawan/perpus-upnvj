@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perpustakaan UPNVJ</title>
+  <style>
+    :root {
+      --primary-green: #006d5b;
+      --light-green: #e6f4f1;
+      --dark-text: #1e1e1e;
+      --light-gray: #f9f9f9;
+      --white: #ffffff;
+      --font-primary: 'Inter', sans-serif; /* Ganti ke Inter */
+      --font-size-title: 2.5rem;
+      --font-size-subtitle: 1.5rem;
+      --font-size-body: 1rem;
+      --font-weight-bold: 600;
+      --font-weight-regular: 400;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--light-gray);
+      color: var(--dark-text);
+      font-family: var(--font-primary);
+      font-size: var(--font-size-body);
+      line-height: 1.6;
+      color: #333333;
+    }
+
+    header {
+      background-color: #38b000; /* Hijau modern */
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ffffff;
+      font-family: var(--font-primary);
+      font-weight: var(--font-weight-regular);
+      font-size: 1rem;
+      position: relative;
+      transition: color 0.3s, transform 0.3s
+    }
+
+    nav a:hover {
+      color: #b7e4c7;
+    }
+
+    nav a:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #ffffff; /* Garis putih di bawah teks saat hover */
+      transform: scaleX(1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #ffffff;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .hero {
+      height: 80vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+              url('banner-web-gedung-perpustakaan-upnvj.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #38b000;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #2a7d00;
+    }
+
+    section {
+      padding: 40px 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+
+    .section-title {
+      font-size: 3rem; /* Ukuran font lebih besar */
+      color: var(--primary-green);
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      font-weight: 600;
+    }
+
+    .section-title::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      width: 800px; /* Panjang garis */
+      height: 3px; /* Ketebalan garis */
+      background-color: var(--primary-green); /* Warna garis */
+      border-radius: 2px; /* Membuat ujung garis melengkung */
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -20px;
+      transform: translateX(-50%);
+      width: 400px; /* Panjang garis kedua */
+      height: 2px; /* Ketebalan garis kedua */
+      background-color: #89c79e; /* Warna hijau muda */
+      border-radius: 2px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border-left: 4px solid var(--primary-green);
+    }
+
+    .link-button {
+      display: inline-block;
+      padding: 10px;
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary-green);
+      color: white;
+      border-radius: 50%;
+      text-decoration: none;
+      font-weight: 500;
+      text-align: center;
+      line-height: 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .link-button:hover {
+      background-color: #005447;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px auto; /* Pastikan margin auto untuk memusatkan */
+      max-width: 600px; /* Batas lebar maksimal */
+      width: 100%; /* Lebar penuh */
+      box-sizing: border-box; /* Pastikan padding dihitung dalam lebar */
+    }
+
+    .search-bar input {
+      width: 100%;
+      max-width: 500px;
+      padding: 15px 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px 0 0 8px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .search-button {
+      background-color: #38b000;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      color: white;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-button:hover {
+      background-color: #2a7d00;
+    }
+
+    #profil {
+      background: linear-gradient(135deg, #e6f4f1 0%, #ffffff 100%);
+      padding: 80px 100px;
+      max-width: 1200px;
+      margin: auto;
+      border-radius: 12px;
+    }
+
+    .profil-content {
+      display: flex;
+      align-items: center;
+      gap: 40px; /* Tambahkan jarak antara gambar dan teks */
+      flex-wrap: wrap; /* Agar responsif di layar kecil */
+    }
+
+    .profil-content img {
+      flex: 1; /* Gambar mengambil ruang */
+      max-width: 550px; /* Perbesar ukuran maksimal gambar */
+      border-radius: 12px; /* Membuat sudut gambar melengkung */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan untuk estetika */
+      transition: transform 0.3s ease;
+    }
+
+    .profil-content img:hover {
+      transform: scale(1.05);
+    }
+
+    .profil-text {
+      flex: 2; /* Teks mengambil lebih banyak ruang */
+    }
+
+    .profil-text p {
+      font-size: 1.1rem; /* Perbesar ukuran font */
+      line-height: 1.9; /* Tambahkan ruang antar baris */
+      color: #333333; /* Gunakan warna teks yang lebih gelap untuk kontras */
+      margin-bottom: 20px; /* Tambahkan jarak antar paragraf */
+      text-align: justify; /* Rata kanan-kiri */
+    }
+
+    .profil-text h3 {
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      margin-bottom: 15px;
+    }
+
+    .profil-text .icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .profil-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .profil-stats div {
+      text-align: center;
+    }
+
+    .profil-stats h4 {
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      margin-bottom: 5px;
+    }
+
+    footer {
+      background-color: #333333; /* Warna gelap untuk footer */
+      color: #ffffff; /* Warna teks putih */
+      padding: 40px 20px;
+      font-family: var(--font-primary);
+      font-size: 0.9rem;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsif dengan minimal 300px */
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-section {
+      text-align: left;
+    }
+
+    .footer-logo {
+      width: 150px;
+      margin-bottom: 15px;
+    }
+
+    .footer-section h3 {
+      font-size: 1.2rem;
+      color: #38b000; /* Warna hijau untuk judul */
+      margin-bottom: 10px;
+    }
+
+    .footer-section p {
+      line-height: 1.8;
+      color: #dddddd; /* Warna abu-abu terang */
+    }
+
+    .footer-section a {
+      color: #38b000;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 15px; /* Tambahkan jarak antar ikon */
+      margin-top: 20px; /* Tambahkan jarak antara deskripsi dan ikon */
+    }
+
+    .footer-socials a img {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s ease;
+      }
+
+    .footer-socials a img:hover {
+      transform: scale(1.2); /* Efek zoom saat hover */
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      border-top: 1px solid #444444;
+      padding-top: 10px;
+      font-size: 0.8rem;
+      color: #aaaaaa; /* Warna abu-abu terang untuk teks bawah */
+    }
+
+    iframe {
+      border-radius: 8px;
+      border: none;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-primary);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: var(--font-size-title);
+    }
+    h2 {
+      font-size: var(--font-size-subtitle);
+    }
+    
+    p {
+      font-family: var(--font-primary);
+      font-weight: var(--font-weight-regular);
+      font-size: var(--font-size-body);
+      line-height: 1.8;
+      color: #555555; /* Warna teks abu-abu untuk paragraf */
+    }
+
+    #faq {
+      padding: 60px 40px;
+      background: linear-gradient(135deg, #e6f4f1 0%, #f9f9f9 100%); /* Balikkan warna gradasi */
+      border-radius: 12px;
+      max-width: 1200px; /* Lebarkan sesuai section lainnya */
+      margin: auto;
+    }
+
+    .faq-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .faq-item {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .faq-question {
+      background: var(--white);
+      color: #333333;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 15px 20px;
+      text-align: left;
+      border: none;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background-color: #f0fdf4;
+    }
+
+    .faq-icon {
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-answer {
+      background: #ffffff;
+      padding: 0 20px; /* Hapus padding atas dan bawah saat tertutup */
+      max-height: 0; /* Awalnya disembunyikan */
+      overflow: hidden;
+      font-size: 1rem;
+      color: #555555;
+      line-height: 1.8;
+      transition: max-height 0.4s ease, padding 0.4s ease; /* Tambahkan transisi untuk padding */
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px; /* Tampilkan jawaban dengan tinggi maksimal */
+      padding: 15px 20px; /* Tambahkan padding atas dan bawah saat terbuka */
+    }
+
+    #layanan {
+      padding: 80px 100px; /* Samakan padding dengan section Profil */
+      background: linear-gradient(135deg, #e6f4f1 0%, #ffffff 100%); /* Samakan background */
+      border-radius: 12px; /* Tambahkan border-radius agar konsisten */
+      max-width: 1200px; /* Tambahkan batas lebar maksimal */
+      margin: auto; /* Pusatkan section */
+    }
+
+    #layanan .grid {
+      display: flex; /* Ubah dari grid ke flexbox */
+      flex-wrap: wrap; /* Pastikan elemen membungkus ke baris berikutnya jika tidak muat */
+      justify-content: center; /* Pusatkan semua card secara horizontal */
+      gap: 20px; /* Jarak antar card tetap */
+    }
+
+    #layanan .card {
+      flex: 0 1 280px; /* Perbesar ukuran minimal card menjadi 280px */
+      max-width: 320px; /* Perbesar ukuran maksimal card menjadi 320px */
+      margin: 0 auto; /* Pusatkan card secara individual */
+      background: var(--white);
+      padding: 25px; /* Tambahkan padding untuk konten card */
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    #layanan .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #layanan .card:hover {
+      background-color: #f0fdf4; /* Warna hijau muda */
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    #layanan .card h3 {
+      font-size: 1.2rem;
+      color: var(--primary-green);
+      margin-bottom: 10px;
+    }
+
+    #layanan .card p {
+      font-size: 1rem;
+      color: #555555;
+      line-height: 1.8;
+    }
+
+    #layanan .card img.icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 15px;
+    }
+
+    #layanan .card .cta-button {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #38b000;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    #layanan .card .cta-button:hover {
+      background-color: #2a7d00;
+    }
+
+    #informasi {
+      padding: 60px 40px;
+      background: linear-gradient(135deg, #f9f9f9 0%, #e6f4f1 100%);
+      border-radius: 12px; /* Sudut melengkung */
+      max-width: 1200px;
+      margin: auto; /* Pusatkan section */
+    }
+
+    #informasi .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsif dengan lebar minimal 250px */
+      gap: 20px; /* Jarak antar card */
+    }
+
+    #informasi .card {
+      display: flex; /* Aktifkan Flexbox */
+      flex-direction: column; /* Susun elemen secara vertikal */
+      justify-content: space-between; /* Jarak antara konten dan tombol */
+      align-items: center; /* Pastikan semua elemen di tengah */
+      background: var(--white);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Bayangan lembut */
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    #informasi .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #informasi .card:hover {
+      background-color: #f0fdf4; /* Warna hijau muda seperti di section Layanan */
+      transform: translateY(-10px); /* Efek naik saat hover */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Bayangan lebih besar */
+    }
+
+    #informasi .card h3 {
+      font-size: 1.2rem;
+      color: var(--primary-green);
+      margin-bottom: 10px;
+    }
+
+    #informasi .card p {
+      font-size: 1rem;
+      color: #555555;
+      line-height: 1.8;
+    }
+
+    #informasi .card img.icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    #informasi .card .cta-button {
+      margin-top: 20px; /* Tambahkan jarak dari konten sebelumnya */
+      align-self: stretch; /* Pastikan tombol melebar sesuai card */
+      text-align: center;
+      background-color: #38b000;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    #informasi .card .cta-button:hover {
+      background-color: #2a7d00;
+    }
+
+    #library-news {
+      padding: 60px 40px;
+      background: linear-gradient(135deg, #f9f9f9 0%, #e6f4f1 100%);
+      border-radius: 12px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsif dengan lebar minimal 250px */
+      gap: 20px; /* Jarak antar card */
+    }
+
+    .news-card {
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .news-card:hover {
+      background-color: #f0fdf4;
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .news-thumbnail {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .news-content {
+      padding: 15px;
+    }
+
+    .news-title {
+      font-size: 1.2rem;
+      color: var(--primary-green);
+      margin-bottom: 10px;
+    }
+
+    .news-meta {
+      font-size: 0.9rem;
+      color: #888888;
+      margin-bottom: 10px;
+    }
+
+    .news-description {
+      font-size: 1rem;
+      color: #555555;
+      line-height: 1.6;
+    }
+
+    #fasilitas {
+      padding: 60px 40px;
+      background: linear-gradient(135deg, #e6f4f1 0%, #ffffff 100%);
+      border-radius: 12px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .fasilitas-item {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .fasilitas-item.reverse {
+      flex-direction: row-reverse; /* Balikkan urutan untuk variasi */
+    }
+
+    .fasilitas-text {
+      flex: 1;
+    }
+
+    .fasilitas-text h3 {
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      margin-bottom: 15px;
+    }
+
+    .fasilitas-text p {
+      font-size: 1rem;
+      color: #555555;
+      line-height: 1.8;
+    }
+
+    .fasilitas-image {
+      flex: 1;
+    }
+
+    .fasilitas-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .fasilitas-image img:hover {
+      transform: scale(1.05); /* Efek zoom saat hover */
+    }
+
+    #koleksi {
+      padding: 60px 40px;
+      background: linear-gradient(135deg, #f9f9f9 0%, #e6f4f1 100%);
+      border-radius: 12px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    #e-resources {
+      padding: 60px 40px;
+      background: linear-gradient(135deg, #e6f4f1 0%, #ffffff 100%);
+      border-radius: 12px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .resource-category {
+      margin-bottom: 40px;
+    }
+
+    .resource-title {
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .resource-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .resource-card {
+      display: flex;
+      flex-direction: column; /* Susun elemen secara vertikal */
+      justify-content: space-between; /* Jarak antara konten dan tombol */
+      align-items: center; /* Pastikan semua elemen di tengah */
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .resource-card img {
+      width: 250px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .resource-card h4 {
+      font-size: 1.2rem;
+      color: var(--primary-green);
+      margin-bottom: 10px;
+    }
+
+    .resource-card p {
+      font-size: 1rem;
+      color: #555555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .resource-buttons {
+      margin-top: auto; /* Dorong tombol ke bagian bawah card */
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .cta-button.secondary {
+      background-color: #ffffff;
+      color: #38b000;
+      border: 1px solid #38b000;
+    }
+
+    .cta-button.secondary:hover {
+      background-color: #38b000;
+      color: white;
+    }
+
+    .section-description {
+      font-size: 1.1rem;
+      color: #555555;
+      line-height: 1.8;
+      text-align: center;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsif dengan lebar minimal 300px */
+      gap: 20px; /* Jarak antar card */
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      background-color: #f0fdf4;
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      color: var(--primary-green);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #555555;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .card .cta-button {
+      background-color: #38b000;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .card .cta-button:hover {
+      background-color: #2a7d00;
+    }
+
+    .section-description {
+      font-size: 1.1rem;
+      color: #555555;
+      line-height: 1.8;
+      text-align: center;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #scrollToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #38b000; /* Warna hijau */
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%; /* Membuat button bulat sempurna */
+      font-size: 24px; /* Ukuran ikon */
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk estetika */
+      display: none; /* Awalnya disembunyikan */
+      z-index: 100;
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Efek transisi */
+    }
+
+    #scrollToTopBtn:hover {
+      background-color: #2a7d00; /* Warna hijau lebih gelap saat hover */
+      transform: scale(1.1); /* Efek zoom saat hover */
+    }
+
+    @media (max-width: 768px) {
+      .profil-content {
+        flex-direction: column; /* Gambar dan teks ditumpuk secara vertikal */
+        text-align: center; /* Teks di tengah */
+      }
+    
+      .profil-content img {
+        max-width: 100%; /* Gambar menyesuaikan lebar layar */
+      }
+
+      #informasi .grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk layar kecil */
+      }
+
+      #informasi .card {
+        padding: 15px;
+      }
+
+      .fasilitas-item {
+        flex-direction: column; /* Tumpuk elemen secara vertikal */
+        text-align: center; /* Teks di tengah */
+      }
+
+      .fasilitas-item.reverse {
+        flex-direction: column; /* Sama seperti item biasa */
+      }
+
+      .fasilitas-image img {
+        max-width: 100%; /* Pastikan gambar tidak melebihi lebar layar */
+      }
+
+      .koleksi-container {
+        grid-template-columns: 1fr; /* Tumpuk deskripsi dan card secara vertikal */
+      }
+
+      .koleksi-cards {
+        grid-template-rows: auto; /* Card tetap vertikal */
+      }
+
+      .koleksi-container {
+        grid-template-columns: 1fr; /* Tumpuk deskripsi dan card secara vertikal */
+      }
+
+      .koleksi-cards {
+        grid-template-rows: auto; /* Card tetap vertikal */
+      }
+
+      .koleksi-container {
+        grid-template-columns: 1fr; /* Tumpuk deskripsi dan card secara vertikal */
+      }
+
+      .koleksi-cards {
+        grid-template-rows: auto; /* Card tetap vertikal */
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <a href="main page.html">
+      <img src="logo-perpus-putih.png" alt="Logo Perpustakaan UPNVJ" style="height: 50px;" />
+    </a>
+    <nav>
+      <a href="main-page-tailwind.html">Beranda</a>
+      <a href="main page.html">Beranda</a>
+      <a href="profil.html">Profil</a>
+      <a href="layanan.html">Layanan</a>
+      <a href="informasi.html">Informasi</a>
+      <a href="fasilitas.html">Fasilitas</a>
+      <a href="edocument.html">E-Document</a>
+      <a href="kerjasama.html">Kerjasama</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Selamat Datang di Perpustakaan UPNVJ</h1>
+    <a href="#koleksi" class="cta-button">Lihat Koleksi</a>
+  </div>
+
+  <section class="search-bar">
+    <input type="text" placeholder="Cari koleksi, layanan, atau informasi di sini..." />
+    <button class="search-button">
+      &#128269; <!-- Simbol pencarian polos -->
+    </button>
+  </section>
+
+  <section id="profil">
+    <h2 class="section-title">Profil Perpustakaan</h2>
+    <div class="profil-content">
+      <img src="foto-perpus2.jpg" alt="Perpustakaan UPNVJ" />
+      <div class="profil-text">
+        <p>
+          📖 Perpustakaan UPN Veteran Jakarta adalah pusat informasi dan pembelajaran yang menyediakan koleksi fisik dan digital, serta fasilitas modern untuk mendukung kegiatan akademik dan penelitian.
+        </p>
+        <a href="profil.html" class="cta-button">Selengkapnya</a>
+      </div>
+    </div>
+    <div style="margin-top: 20px; border-radius: 12px; overflow: hidden; aspect-ratio: 16/9;">
+      <iframe 
+        width="100%" 
+        height="100%" 
+        src="https://www.youtube.com/embed/D3TZMgxLMjs" 
+        title="Profil Perpustakaan UPNVJ" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <section id="layanan">
+    <h2 class="section-title">Layanan Kami</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="Icon/Layanan/icon-sirkulasi.svg" alt="Ikon Sirkulasi" class="icon" />
+        <h3>Sirkulasi</h3>
+        <p>Layanan peminjaman dan pengembalian koleksi fisik seperti buku, majalah, dan lainnya untuk mendukung kebutuhan akademik.</p>
+        <a href="sirkulasi.html" class="cta-button">Selengkapnya</a>
+      </div>
+      <div class="card">
+        <img src="Icon/Layanan/icon-referensi.svg" alt="Ikon Referensi" class="icon" />
+        <h3>Referensi</h3>
+        <p>Penyediaan koleksi referensi seperti ensiklopedia, kamus, dan direktori yang hanya dapat digunakan di ruang baca.</p>
+        <a href="referensi.html" class="cta-button">Selengkapnya</a>
+      </div>
+      <div class="card">
+        <img src="Icon/Layanan/icon-digital.svg" alt="Ikon Digital" class="icon" />
+        <h3>Digital</h3>
+        <p>Akses koleksi digital seperti e-book, jurnal online, dan database akademik untuk mendukung penelitian dan pembelajaran.</p>
+        <a href="digital.html" class="cta-button">Selengkapnya</a>
+      </div>
+      <div class="card">
+        <img src="Icon/Layanan/icon-audio-visual.svg" alt="Ikon Audio Visual" class="icon" />
+        <h3>Audio Visual</h3>
+        <p>Layanan peminjaman dan penggunaan koleksi audio visual seperti CD, DVD, dan perangkat multimedia lainnya.</p>
+        <a href="audio-visual.html" class="cta-button">Selengkapnya</a>
+      </div>
+      <div class="card">
+        <img src="Icon/Layanan/icon-pendidikan.svg" alt="Ikon Pendidikan" class="icon" />
+        <h3>Pendidikan</h3>
+        <p>Pelatihan literasi informasi, bimbingan pengguna, dan workshop untuk meningkatkan keterampilan akademik.</p>
+        <a href="pendidikan.html" class="cta-button">Selengkapnya</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="informasi">
+    <h2 class="section-title">Informasi Perpustakaan</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="Icon/Informasi/icon-jam-operasional.svg" alt="Ikon Jam Operasional" class="icon" />
+        <h3>Jam Operasional</h3>
+        <p>Perpustakaan buka Senin-Jumat pukul 08.00-16.00. Sabtu dan Minggu tutup.</p>
+        <a href="jam-operasional.html" class="cta-button">Selengkapnya</a>
+      </div>
+      <div class="card">
+        <img src="Icon/Informasi/icon-tata-tertib.svg" alt="Ikon Jam Operasional" class="icon" />
+        <h3>Tata Tertib</h3>
+        <p>Pengguna wajib menjaga ketenangan, tidak membawa makanan/minuman, dan mematuhi aturan perpustakaan.</p>
+        <a href="tata-tertib.html" class="cta-button">Selengkapnya</a>
+      </div>
+      <div class="card">
+        <img src="Icon/Informasi/icon-keanggotaan.svg" alt="Ikon Jam Operasional" class="icon" />
+        <h3>Keanggotaan</h3>
+        <p>Keanggotaan perpustakaan terbuka untuk mahasiswa, dosen, dan staf UPNVJ dengan kartu identitas resmi.</p>
+        <a href="keanggotaan.html" class="cta-button">Selengkapnya</a>
+      </div>
+      <div class="card">
+        <img src="Icon/Informasi/icon-diagram-alur.svg" alt="Ikon Jam Operasional" class="icon" />
+        <h3>Diagram Alur</h3>
+        <p>Ikuti prosedur peminjaman, pengembalian, dan layanan lainnya sesuai diagram alur yang tersedia.</p>
+        <a href="diagram-alur.html" class="cta-button">Selengkapnya</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="library-news">
+  <h2 class="section-title">UPNVJ Library News</h2>
+  <div class="news-grid">
+    <div class="news-card">
+      <img src="Foto\feed-selamat-hari-paskah.jpg" alt="Berita 1" class="news-thumbnail" />
+      <div class="news-content">
+        <h3 class="news-title">Selamat memperingati hari Paskah</h3>
+        <p class="news-meta">Library UPNVJ • 20 April 2025</p>
+        <p class="news-description">Semoga Minggu Paskah ini menginspirasi Anda akan harapan baru, kebahagiaan, dan kelimpahan.</p>
+      </div>
+    </div>
+    <div class="news-card">
+      <img src="Foto\feed-pengumuman-perpus-upnvj-tutup-selama-sterilisasi-utbk-snbt-2025.jpg" alt="Berita 2" class="news-thumbnail" />
+      <div class="news-content">
+        <h3 class="news-title">Perpustakaan UPNVJ Tutup Selama Sterilisasi</h3>
+        <p class="news-meta">Library UPNVJ • 17 April 2025</p>
+        <p class="news-description">Perpustakaan akan tutup selama pelaksanaan UTBK-SNBT, 21 April - 07 Mei 2025.</p>
+      </div>
+    </div>
+    <div class="news-card">
+      <img src="Foto\feed-koleksi-buku-ubah-mindset-yang-tersedia-di-perpus-upnvj_01.jpg" alt="Berita 3" class="news-thumbnail" />
+      <div class="news-content">
+        <h3 class="news-title">Buku Rekomendasi untuk Ubah Mindset</h3>
+        <p class="news-meta">Library UPNVJ • 17 April 2025</p>
+        <p class="news-description">Temukan buku-buku rekomendasi untuk mengubah mindset Anda di perpustakaan UPNVJ.</p>
+      </div>
+    </div>
+    <div class="news-card">
+      <img src="Foto\feed-selamat-hari-raya-idul-fitri-2025.jpg" alt="Berita 4" class="news-thumbnail" />
+      <div class="news-content">
+        <h3 class="news-title">Selamat Hari Raya Idul Fitri 1446 H</h3>
+        <p class="news-meta">Library UPNVJ • 31 Maret 2025</p>
+        <p class="news-description">Perpustakaan UPNVJ mengucapkan Selamat Hari Raya Idul Fitri 1446 H.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="fasilitas">
+  <h2 class="section-title">Fasilitas Perpustakaan</h2>
+  <div class="fasilitas-item">
+    <div class="fasilitas-text">
+      <h3>Sarana dan Prasarana Umum</h3>
+      <p>Perpustakaan dilengkapi dengan ruang baca, area diskusi, akses internet gratis, dan ruang multimedia untuk mendukung kegiatan belajar.</p>
+    </div>
+    <div class="fasilitas-image">
+      <img src="foto-perpus3.jpg" alt="Sarana dan Prasarana Umum" />
+    </div>
+  </div>
+  <div class="fasilitas-item reverse">
+    <div class="fasilitas-text">
+      <h3>Fasilitas Civitas</h3>
+      <p>Fasilitas khusus untuk mahasiswa, dosen, dan staf, termasuk ruang kerja bersama, ruang seminar, dan layanan komputer.</p>
+    </div>
+    <div class="fasilitas-image">
+      <img src="foto-perpus1 2.jpg" alt="Fasilitas Civitas" />
+    </div>
+  </div>
+</section>
+
+  <section id="edocument">
+    <h2 class="section-title">E-Document</h2>
+    <p>Akses skripsi digital, tugas akhir, dan dokumen akademik lainnya dari koleksi perpustakaan.</p>
+  </section>
+
+  <section id="koleksi">
+  <h2 class="section-title">Koleksi Digital</h2>
+  <p class="section-description">
+    Jelajahi koleksi digital kami yang mencakup e-book, jurnal online, dan skripsi mahasiswa. Semua koleksi dapat diakses kapan saja dan di mana saja untuk mendukung kebutuhan akademik Anda.
+  </p>
+  <div class="grid">
+    <div class="card">
+      <h3>E-Book</h3>
+      <p>Koleksi buku digital yang dapat diakses oleh civitas akademika UPNVJ kapan saja dan di mana saja.</p>
+      <a href="ebook.html" class="cta-button">Lihat Koleksi</a>
+    </div>
+    <div class="card">
+      <h3>Jurnal Online</h3>
+      <p>Berbagai jurnal nasional dan internasional untuk mendukung kegiatan penelitian dan pembelajaran.</p>
+      <a href="jurnal.html" class="cta-button">Lihat Koleksi</a>
+    </div>
+    <div class="card">
+      <h3>Skripsi & Tugas Akhir</h3>
+      <p>Koleksi karya ilmiah mahasiswa yang dapat dijadikan referensi akademik untuk penelitian Anda.</p>
+      <a href="skripsi.html" class="cta-button">Lihat Koleksi</a>
+    </div>
+  </div>
+</section>
+
+<section id="e-resources">
+  <h2 class="section-title">E-Resources</h2>
+  <div class="resources-grid">
+    <!-- Database E-Journal -->
+    <div class="resource-category">
+      <h3 class="resource-title">Database E-Journal</h3>
+      <div class="resource-items">
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-wiley.png" alt="Wiley Online Library" />
+          <h4>Wiley Online Library</h4>
+          <p>Koleksi 27,000+ buku online dan jurnal sebagai referensi.</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-proquest-library.png" alt="ProQuest Library" />
+          <h4>ProQuest Library</h4>
+          <p>Jurnal ilmiah, buku, disertasi & tesis, dari semua sumber.</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-emerald-insight-web.png" alt="Emerald Insight" />
+          <h4>Emerald Insight</h4>
+          <p>Artikel jurnal, studi kasus, kutipan awal.</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-global-ejournal-library.png" alt="Global Ejournal Library" />
+          <h4>GEJ Library</h4>
+          <p>Koleksi-koleksi E-journal dari Global Ejournal Library</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <!-- Tambahkan resource lainnya di sini -->
+      </div>
+    </div>
+
+    <!-- Database E-Book -->
+    <div class="resource-category">
+      <h3 class="resource-title">Database E-Book</h3>
+      <div class="resource-items">
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-proquest-2.png" alt="ProQuest Ebook Central" />
+          <h4>ProQuest Ebook Central</h4>
+          <p>Online database yang berisi e-book milik ProQuest</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-mcgrawhill-web.jpg" alt="McGrawHill Access Medicine" />
+          <h4>McGrawHill Access Medicine</h4>
+          <p>Koleksi E-Resources Kedokteran dan Kesehatan</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-wiley-text-web.png" alt="Wiley etext" />
+          <h4>Wiley e-text</h4>
+          <p>E-Resources e-text terbitan wiley</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-emerald-insight-web.png" alt="Emerald Insight" />
+          <h4>Emerald Insight</h4>
+          <p>Artikel jurnal, studi kasus, kutipan awal.</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <!-- Tambahkan resource lainnya di sini -->
+      </div>
+    </div>
+
+    <div class="resource-category">
+      <h3 class="resource-title">Digital Library</h3>
+      <div class="resource-items">
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-kubuku-2.png" alt="Kubuku UPNVJ" />
+          <h4>Kubuku UPNVJ</h4>
+          <p>Aplikasi Perpustakaan Digital Library UPN Veteran Jakarta</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-digilib-upnvj.png" alt="Digilib UPNVJ" />
+          <h4>Digilib UPNVJ</h4>
+          <p>Perpustakaan Digital Akses Dari Website Digilib UPNVJ</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <!-- Tambahkan resource lainnya di sini -->
+      </div>
+    </div>
+
+    <div class="resource-category">
+      <h3 class="resource-title">UPNVJ Literature</h3>
+      <div class="resource-items">
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-OPAC-perpustakaan-upnvj.png" alt="Website OPAC Perpustakaan UPNVJ" />
+          <h4>Website OPAC Perpustakaan UPNVJ</h4>
+          <p>Website OPAC Perpustakaan UPNVJ</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-repository-upnvj-web.png" alt="Repository UPNVJ" />
+          <h4>Repository UPNVJ</h4>
+          <p>Kumpulan arsip karya ilmiah civitas UPNVJ</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-ejournal-upnvj-web.png" alt="E-Journal UPNVJ" />
+          <h4>E-Journal UPNVJ</h4>
+          <p>Koleksi E-Journal UPN "Veteran" Jakarta</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-eresources-opoc-android.png" alt="Apps OPAC UPNVJ" />
+          <h4>Apps OPAC UPNVJ</h4>
+          <p>Sistem pencarian koleksi di Perpustakaan UPNVJ</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <!-- Tambahkan resource lainnya di sini -->
+      </div>
+    </div>
+
+    <div class="resource-category">
+      <h3 class="resource-title">Research Tool</h3>
+      <div class="resource-items">
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-scopus.png" alt="Scopus" />
+          <h4>Scopus</h4>
+          <p>Layanan indeksasi dan penyedia database jurnal terbesar saat ini.</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-indonesia-onesearch-web.png" alt="Indonesia Onesearch" />
+          <h4>Indonesia Onesearch</h4>
+          <p>Sebuah pintu pencarian tunggal untuk semua koleksi publik</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-rama-repository.png" alt="RAMA REPOSITORY" />
+          <h4>RAMA REPOSITORY</h4>
+          <p>Repositori nasional : skripsi, tesis, disertasi, dan laporan penelitian</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-turnitin.png" alt="Turnitin" />
+          <h4>Turnitin</h4>
+          <p>Alat cek plagiarisme, memeriksa keaslian, dan keakuratan karya tulis</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <!-- Tambahkan resource lainnya di sini -->
+      </div>
+    </div>
+
+    <div class="resource-category">
+      <h3 class="resource-title">Our Resources</h3>
+      <div class="resource-items">
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-eresources-perpusnas-ri.png" alt="E-Resources Perpusnas RI" />
+          <h4>E-Resources Perpusnas RI</h4>
+          <p>Dengan koleksi dari 34 penerbit E-Resources</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-repository-kemdikbud.png" alt="Repository Kemdikbud" />
+          <h4>Repository Kemdikbud</h4>
+          <p>Database karya ilmiah yang tersimpan di KEMDIKBUD RI</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-pijar-upi-oalib.png" alt="PIJAR OALIB UPI" />
+          <h4>PIJAR OALIB UPI</h4>
+          <p>Portal indexer berbagai sumber belajar terbuka dari berbagai portal</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <img src="Icon\Eresources\button-usulan-buku-UPNVJ-web.png" alt="Usulan Buku UPNVJ" />
+          <h4>Usulan Buku UPNVJ</h4>
+          <p>Link form usulan buku bagi civitas UPN "Veteran" Jakarta</p>
+          <div class="resource-buttons">
+            <a href="#" class="cta-button">Panduan</a>
+            <a href="#" class="cta-button secondary">Tautan</a>
+          </div>
+        </div>
+        <!-- Tambahkan resource lainnya di sini -->
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="faq">
+  <h2 class="section-title">Pertanyaan Umum</h2>
+  <div class="faq-container">
+    <div class="faq-item">
+      <button class="faq-question">
+        Bagaimana cara meminjam buku di perpustakaan?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Anda dapat meminjam buku dengan membawa kartu mahasiswa ke meja layanan peminjaman.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        Apakah perpustakaan menyediakan akses jurnal internasional?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Ya, perpustakaan menyediakan akses ke berbagai jurnal internasional melalui platform digital kami.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        Bagaimana cara mengakses koleksi digital?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Koleksi digital dapat diakses melalui halaman <a href="#koleksi">Koleksi Digital</a> di website ini.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <img src="logo-perpus-putih.png" alt="Logo Perpustakaan UPNVJ" class="footer-logo" />
+      <p>UPT Perpustakaan UPN Veteran Jakarta merupakan unit pelaksana teknis di bidang perpustakaan yang mempunyai tugas melaksanakan pemberian layanan kepustakaan.</p>
+      <div class="footer-socials">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <img src="Icon\Footer\facebook-round-color-icon.svg" alt="Facebook" />
+        </a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <img src="Icon\Footer\ig-instagram-icon.svg" alt="Instagram" />
+        </a>
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+          <img src="Icon\Footer\youtube-color-icon.svg" alt="YouTube" />
+        </a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>Alamat</h3>
+      <p>Kampus UPN "Veteran" Jakarta Gedung DR. Soetomo Lt. 3 dan Lt. 4 Jl. R.S. Fatmawati Pondok Labu - Jakarta Selatan 12450</p>
+      <p><strong>Telepon:</strong> 021-75902835</p>
+      <p><strong>Email:</strong> <a href="mailto:library@upnvj.ac.id">library@upnvj.ac.id</a></p>
+    </div>
+    <div class="footer-section">
+      <h3>Lokasi</h3>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d809.9323967591235!2d106.79483065675534!3d-6.3158380944621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69efc9a877deff%3A0x702518832f089921!2sPerpustakaan%20UPN%20Veteran%20Jakarta!5e0!3m2!1sen!2sid!4v1745768110809!5m2!1sen!2sid"
+        width="100%" 
+        height="150" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Perpustakaan UPNVJ. All rights reserved.</p>
+  </div>
+</footer>
+
+  <button id="scrollToTopBtn" title="Kembali ke atas">
+    &#x25B2; <!-- Chevron up -->
+  </button>
+
+  <script>
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+    window.addEventListener("scroll", () => {
+      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Gabungkan observer untuk semua elemen yang perlu animasi fade-in
+    const fadeInElements = document.querySelectorAll('#layanan .card, #informasi .card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    fadeInElements.forEach(element => observer.observe(element));
+  </script>
+  <script>
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      // Tutup semua FAQ lainnya
+      faqItems.forEach(i => {
+        if (i !== item) {
+          i.classList.remove('active');
+        }
+      });
+      // Toggle FAQ yang diklik
+      item.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+</html>

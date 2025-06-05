@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil - Perpustakaan UPNVJ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    :root {
+      --primary-green: #006d5b;
+      --light-green: #e6f4f1;
+      --dark-text: #1e1e1e;
+      --light-gray: #f9f9f9;
+      --white: #ffffff;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-dark-text">
+  <!-- Header -->
+  <header class="bg-[#38b000] text-white py-4 px-8 shadow-md sticky top-0 z-50 flex justify-between items-center">
+    <a href="index.html">
+      <img src="logo-perpus-putih.png" alt="Logo Perpustakaan UPNVJ" class="h-12">
+    </a>
+
+    <nav class="flex space-x-6">
+      <a href="index.html" class="group transition duration-300">
+        Beranda
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="profil.html" class="group transition duration-300">
+        Profil
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="layanan.html" class="group transition duration-300">
+        Layanan
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="informasi.html" class="group transition duration-300">
+        Informasi
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="fasilitas.html" class="group transition duration-300">
+        Fasilitas
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="edocument.html" class="group transition duration-300">
+        E-Document
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="kerjasama.html" class="group transition duration-300">
+        Kerjasama
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Banner dengan gambar penuh, overlay gelap, dan teks di tengah -->
+<div class="w-full relative bg-[url('banner-web-gedung-perpustakaan-upnvj.jpg')] bg-cover bg-center min-h-[400px] flex items-center justify-center">
+  <!-- Overlay gelap -->
+  <div class="absolute inset-0 bg-black/40 z-0 backdrop-blur-[2px]"></div>
+
+  <!-- Konten judul -->
+  <h1
+    class="relative z-10 text-8xl font-bold text-white text-center"
+    data-aos="zoom-in"
+    data-aos-duration="1000"
+  >
+    PROFIL
+    <span class="absolute inset-x-0 bottom-0 h-2 bg-light-green rounded-md -z-10"></span>
+  </h1>
+</div>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto py-4 px-4"> <!--bg-green-50 bg-gradient-to-r from-white via-green-100 to-white-->
+    <!--<div class="w-full bg-[url('banner-web-gedung-perpustakaan-upnvj.jpg')] bg-cover bg-center my-12">
+      <div class="max-w-6xl mx-auto px-4 py-16">
+        <h1 class="text-6xl font-bold text-green-700 text-center relative mb-12">
+          Profil Perpustakaan UPNVJ
+          <span class="absolute inset-x-0 bottom-0 h-2 bg-light-green rounded-md -z-10"></span>
+        </h1>
+      </div>
+    </div>-->
+    <!-- Sejarah -->
+    <section id="sejarah" class="p-6 mb-6">
+      <h2 class="text-5xl font-bold text-[#38b000] text-center mb-6" data-aos="fade-up" data-aos-duration="1000">Sejarah</h2>
+      <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+      <div class="flex flex-wrap gap-6 items-center" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="flex-1 min-w-[300px] text-xl text-justify leading-relaxed">
+          <p class="mb-4"><strong>Perpustakaan UPN “Veteran” Jakarta</strong> awalnya dikenal sebagai Perpustakaan PTPN “Veteran” Cabang Jakarta, 
+            yang berdiri pada 12 April 1973 di bawah kepemimpinan Bapak Nurman Teks. Ing (alm), berlokasi di Jalan Batu, Gambir, Jakarta Pusat. 
+            Seiring perkembangan lembaga, perpustakaan ini kini menjadi salah satu unit pelaksana teknis yang bertanggung jawab kepada Rektor dan 
+            dikoordinasikan oleh Wakil Rektor Bidang Akademik, dengan tugas utama menyediakan informasi dan referensi pendukung Tri Dharma Perguruan Tinggi.</p>
+          <p class="mb-4">Pelayanan dilakukan secara open access, memungkinkan pengunjung langsung mengakses koleksi di rak. Perpustakaan buka 
+            enam hari seminggu, Senin–Jumat pukul 07.30–19.00 WIB dan Sabtu pukul 08.00–12.00 WIB, serta tutup pada Minggu dan hari libur nasional.</p>
+          <p class="mb-4">Mengikuti perkembangan teknologi informasi, UPT Perpustakaan terus berinovasi menuju perpustakaan berbasis elektronik. 
+            Sistem otomasi telah diterapkan melalui aplikasi perpustakaan digital, dan koleksi yang disediakan meliputi buku cetak sesuai kurikulum 
+            hingga sumber digital seperti e-Book dan e-Journal.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visi, Misi, dan Tujuan -->
+    <section id="visi-misi" class="p-6 mb-6">
+      <h2 class="text-5xl font-bold text-[#38b000] text-center mb-6" data-aos="fade-up" data-aos-duration="1000">Visi, Misi, dan Tujuan</h2>
+      <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+      <div data-aos="zoom-in" data-aos-duration="1000">
+        <h3 class="text-4xl font-semibold text-[#38b000] text-center mb-4">Visi</h3>
+        <p class="mb-6 text-xl leading-relaxed"><strong>UPT Perpustakaan UPN “Veteran” Jakarta</strong> berkomitmen menjadi pusat informasi dan referensi yang inovatif serta 
+        kompetitif, berbasis teknologi informasi untuk mendukung pelaksanaan Tri Dharma Perguruan Tinggi.</p>
+      </div>
+      <div data-aos="zoom-in" data-aos-duration="1000">
+        <h3 class="text-4xl font-semibold text-[#38b000] text-center mb-4">Misi</h3>
+        <ul class="list-disc text-xl pl-6 mb-6 leading-relaxed">
+        <li class="mb-2">Menyediakan koleksi yang relevan bagi kebutuhan sivitas akademika.</li>
+        <li class="mb-2">Memberikan pelayanan berkualitas yang responsif terhadap permintaan dan kebutuhan pengguna.</li>
+        <li>Mengembangkan sistem perpustakaan berbasis teknologi informasi dan komunikasi.</li>
+      </ul>
+      </div>
+      <div data-aos="zoom-in" data-aos-duration="1000">
+        <h3 class="text-4xl font-semibold text-[#38b000] text-center mb-4">Tujuan</h3>
+        <ol class="list-decimal text-xl pl-6 mb-6 leading-relaxed">
+        <li class="mb-2">Mendukung kegiatan belajar, mengajar, dan penelitian dengan menyediakan akses informasi yang luas dan berkualitas.</li>
+        <li class="mb-2">Menyediakan sumber informasi yang berkualitas, mudah diakses, dan sesuai perkembangan zaman untuk mendukung kurikulum.</li>
+        <li class="mb-2">Menyediakan layanan kepustakaan profesional guna meningkatkan kualitas UPT Perpustakaan.</li>
+        <li class="mb-2">Menyediakan fasilitas akses informasi yang memadai, nyaman, dan mendukung kegiatan Tri Dharma.</li>
+        <li class="mb-2">Memenuhi kebutuhan SDM perpustakaan yang kompeten, bersertifikasi, dan sesuai kualifikasi.</li>
+        <li>Menjamin kelancaran operasional dalam pengelolaan dan layanan perpustakaan.</li>
+      </ol>
+      </div>
+      
+    </section>
+
+    <!-- Tugas dan Fungsi -->
+    <section id="tugas-fungsi" class="p-6 mb-6">
+      <h2 class="text-5xl font-bold text-[#38b000] text-center mb-6" data-aos="fade-up" data-aos-duration="1000">Tugas dan Fungsi</h2>
+      <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+      <div data-aos="zoom-in" data-aos-duration="1000">
+        <p class="text-xl mb-6 leading-relaxed">UPT Perpustakaan UPN "Veteran" Jakarta bertugas memberikan layanan kepustakaan sebagai unit pelaksana teknis. Dalam menjalankan tugasnya, perpustakaan memiliki beberapa fungsi utama, yaitu:</p>
+        <ul class="list-disc text-xl pl-6">
+        <li class="mb-2">Menyusun rencana kerja, program kegiatan, dan anggaran tahunan.</li>
+        <li class="mb-2">Merencanakan serta menyediakan kebutuhan bahan pustaka.</li>
+        <li class="mb-2">Melakukan pengolahan bahan pustaka agar siap digunakan.</li>
+        <li class="mb-2">Memberikan layanan peminjaman dan pemanfaatan koleksi secara optimal.</li>
+        <li class="mb-2">Menjaga dan merawat koleksi perpustakaan.</li>
+        <li>Mengelola administrasi dan tata usaha perpustakaan.</li>
+      </ul>
+      </div>
+      
+    </section>
+
+    <!-- Struktur Organisasi -->
+    <!--<section id="struktur-organisasi" class="mb-12">
+      <h2 class="text-4xl font-semibold text-green-700 text-center mb-6">Struktur Organisasi</h2>
+      <p class="mb-6">Struktur organisasi Perpustakaan UPNVJ terdiri dari Kepala Perpustakaan, staf pengelola koleksi, staf layanan pengguna, dan staf teknologi informasi. Berikut adalah diagram struktur organisasi:</p>
+      <img src="images/struktur-organisasi.png" alt="Struktur Organisasi Perpustakaan UPNVJ" class="rounded-lg shadow-md mx-auto max-w-full">
+    </section>-->
+
+    <section id="struktur-organisasi" class="p-6 mb-6">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-5xl font-bold text-[#38b000] text-center mb-6" data-aos="fade-up" data-aos-duration="1000">Struktur Organisasi</h2>
+        <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+        <p class="text-xl mb-12 leading-relaxed" data-aos="zoom-in" data-aos-duration="1000">
+          Susunan organisasi UPT Perpustakaan UPN "Veteran" Jakarta dalam mendukung layanan perpustakaan secara profesional.
+        </p>
+    
+        <!-- Kepala UPT -->
+        <div class="flex justify-center mb-12">
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+            <img src="Foto\Struktur\fajar-nugroho-1-225x300.png" alt="Fajar Nugroho" class="w-36 h-36 mx-auto rounded-full object-scale-down mb-4">
+            <h3 class="text-lg font-semibold text-gray-800">Fajar Nugroho, S. Kom., M.P.</h3>
+            <p class="text-gray-600 mt-2">Kepala UPT Perpustakaan</p>
+          </div>
+        </div>
+    
+        <!-- Grid 4 kolom x 3 baris -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+            <div>
+              <img src="Foto\Struktur\1009-1.png" alt="Saidun Sinaga" class="w-36 h-36 mx-auto rounded-full object-scale-down mb-4">
+              <h3 class="text-lg font-semibold text-gray-800">Saidun Sinaga, S.I.P</h3>
+            </div>
+            <p class="text-gray-600 mt-2">Pengolah Bahan Pustaka</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+            <div>
+              <img src="Foto\Struktur\foto_deniw-225x300.jpeg" alt="Deni Wahyudin" class="w-36 h-36 mx-auto rounded-full object-scale-down mb-4">
+              <h3 class="text-lg font-semibold text-gray-800">Deni Wahyudin, S.IP</h3>
+            </div>
+            <p class="text-gray-600 mt-2">Pengolah Bahan Pustaka</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+            <div>
+              <img src="Foto\Struktur\foto_zakim-1-216x300.jpg" alt="Zaki Mubarok" class="w-36 h-36 mx-auto rounded-full object-scale-down mb-4">
+              <h3 class="text-lg font-semibold text-gray-800">Zaki Mubarok, S.IP</h3>
+            </div>
+            <p class="text-gray-600 mt-2">Pengolah Bahan Pustaka</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+            <div>
+              <img src="Foto\Struktur\foto_khadafi-225x300.jpeg" alt="Muamar Khadafi" class="w-36 h-36 mx-auto rounded-full object-scale-down mb-4">
+              <h3 class="text-lg font-semibold text-gray-800">Muamar Khadafi, S.IP</h3>
+            </div>
+            <p class="text-gray-600 mt-2">Pengelola Pustaka Elektronik</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+            <div>
+              <img src="Foto\Struktur\foto_fitrianda-1-225x300.png" alt="Fitrianda" class="w-36 h-36 mx-auto rounded-full object-scale-down mb-4">
+              <h3 class="text-lg font-semibold text-gray-800">Fitrianda, S.IP</h3>
+            </div>
+            <p class="text-gray-600 mt-2">Pengelola Pustaka Elektronik (FT)</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+            <div>
+              <img src="Foto\Struktur\foto_lisyem-200x300.jpeg" alt="Lisye Maulina" class="w-36 h-36 mx-auto rounded-full object-scale-down mb-4">
+              <h3 class="text-lg font-semibold text-gray-800">Lisye Maulina, S.IP</h3>
+            </div>
+            <p class="text-gray-600 mt-2">Pengelola Pustaka Elektronik (FIKES)</p>
+          </div>
+          <!-- Slot tambahan buat nutup 3x4 -->
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+            <div>
+              <img src="Foto\Struktur\foto_sarodih-228x300.jpeg" alt="Sarodih Maulana Nur" class="w-36 h-36 mx-auto rounded-full object-scale-down mb-4">
+              <h3 class="text-lg font-semibold text-gray-800">Sarodih Maulana Nur</h3>
+            </div>
+            <p class="text-gray-600 mt-2">Pengadministrasi Perpustakaan</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+            <div>
+              <img src="Foto\Struktur\WhatsApp-Image-2024-07-26-at-14.54.25-1.jpeg" alt="Apriadi" class="w-36 h-36 mx-auto rounded-full object-scale-down mb-4">
+              <h3 class="text-lg font-semibold text-gray-800">Apriadi, S.S.I</h3>
+            </div>
+            <p class="text-gray-600 mt-2">Pustakawan</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+            <div>
+              <img src="Foto\Struktur\pas-foto-rosita-1.jpg" alt="Rosita Nur Azizah" class="w-36 h-36 mx-auto rounded-full object-scale-down mb-4">
+              <h3 class="text-lg font-semibold text-gray-800">Rosita Nur Azizah, S.S.I</h3>
+            </div>
+            <p class="text-gray-600 mt-2">Pustakawan</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+            <div>
+              <img src="Foto\Struktur\pas-foto-annisa.jpg" alt="Annisa Nur Azizah" class="w-36 h-36 mx-auto rounded-full object-scale-down mb-4">
+              <h3 class="text-lg font-semibold text-gray-800">Annisa Nur Azizah, S.S.I</h3>
+            </div>
+            <p class="text-gray-600 mt-2">Pustakawan</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+            <div>
+              <img src="Foto\Struktur\foto_ratnas-218x300.jpeg" alt="Ratna Suminar" class="w-36 h-36 mx-auto rounded-full object-scale-down mb-4">
+              <h3 class="text-lg font-semibold text-gray-800">Ratna Suminar, S.E.</h3>
+            </div>
+            <p class="text-gray-600 mt-2">Pengelola Keuangan</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+            <div>
+              <img src="Foto\Struktur\ama-foto-foto.jpg" alt="Nisrina Salma" class="w-36 h-36 mx-auto rounded-full object-scale-down mb-4">
+              <h3 class="text-lg font-semibold text-gray-800">Nisrina Salma</h3>
+            </div>
+            <p class="text-gray-600 mt-2">Desain Grafis</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Kegiatan -->
+    <section id="video-kegiatan" class="p-6 mb-6">
+      <h2 class="text-5xl font-bold text-[#38b000] text-center mb-6" data-aos="fade-up" data-aos-duration="1000">
+        Video Kegiatan
+      </h2>
+      <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+
+      <!-- 3 video di atas -->
+        <div class="flex flex-col md:flex-row gap-6 mb-8" data-aos="zoom-in" data-aos-duration="1000">
+          <div class="flex-1 aspect-video rounded-lg overflow-hidden">
+            <iframe 
+              src="https://www.youtube.com/embed/5uYQT2siCpM?si=eWctQqfgY65WJmPa" 
+              title="Video 1" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen 
+              class="w-full h-full">
+            </iframe>
+        </div>
+        <div class="flex-1 aspect-video rounded-lg overflow-hidden">
+          <iframe 
+            src="https://www.youtube.com/embed/QV8cjp8QR5U?si=tCZCai-NbJTpZxFf" 
+            title="Video 2" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen 
+            class="w-full h-full">
+          </iframe>
+        </div>
+        <div class="flex-1 aspect-video rounded-lg overflow-hidden">
+          <iframe 
+            src="https://www.youtube.com/embed/1nL1HhiSEWk?si=xUMtjMj80AZT8fDs" 
+            title="Video 3" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen 
+            class="w-full h-full">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- 1 video di bawah -->
+      <div class="rounded-lg overflow-hidden aspect-video" data-aos="zoom-in" data-aos-duration="1000">
+        <iframe 
+          src="https://www.youtube.com/embed/D3TZMgxLMjs" 
+          title="Video Bawah" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen 
+          class="w-full h-full">
+        </iframe>
+      </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#333333] text-white py-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <img src="logo-perpus-putih.png" alt="Logo Perpustakaan UPNVJ" class="h-12 mb-4">
+        <p class="text-sm">UPT Perpustakaan UPN Veteran Jakarta merupakan unit pelaksana teknis di bidang perpustakaan yang mempunyai tugas melaksanakan pemberian layanan kepustakaan.</p>
+        <div class="flex space-x-4 mt-4">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <img src="Icon/Footer/facebook-round-color-icon.svg" alt="Facebook" class="h-6">
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <img src="Icon/Footer/ig-instagram-icon.svg" alt="Instagram" class="h-6">
+          </a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+            <img src="Icon/Footer/youtube-color-icon.svg" alt="YouTube" class="h-6">
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-lg text-[#38b000]  font-semibold mb-4">Alamat</h3>
+        <p class="text-sm">Kampus UPN "Veteran" Jakarta Gedung DR. Soetomo Lt. 3 dan Lt. 4 Jl. R.S. Fatmawati Pondok Labu - Jakarta Selatan 12450</p>
+        <p class="text-sm mt-2"><strong>Telepon:</strong> 021-75902835</p>
+        <p class="text-sm">
+          <strong>WhatsApp:</strong>
+          <a href="https://wa.me/6281234567890" target="_blank" class="text-[#38b000] font-bold hover:underline ml-1">+62 858-1159-1970</a><br>
+          <a href="https://wa.me/6289876543210" target="_blank" class="text-[#38b000] font-bold hover:underline ml-[87px]">+62 858-1159-1971</a>
+        </p>
+        <p class="text-sm"><strong>Email:</strong> <a href="mailto:library@upnvj.ac.id" class="text-[#38b000] hover:underline">library@upnvj.ac.id</a></p>
+      </div>
+      <div>
+        <h3 class="text-lg text-[#38b000] font-semibold mb-4">Lokasi</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d809.9323967591235!2d106.79483065675534!3d-6.3158380944621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69efc9a877deff%3A0x702518832f089921!2sPerpustakaan%20UPN%20Veteran%20Jakarta!5e0!3m2!1sen!2sid!4v1745768110809!5m2!1sen!2sid"
+          width="100%" 
+          height="150" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          class="rounded-lg">
+        </iframe>
+      </div>
+    </div>
+    <div class="text-center text-sm mt-8 border-t border-gray-700 pt-4">
+      &copy; 2025 Perpustakaan UPNVJ. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

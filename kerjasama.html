@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan - Perpustakaan UPNVJ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    :root {
+      --primary-green: #006d5b;
+      --light-green: #e6f4f1;
+      --dark-text: #1e1e1e;
+      --light-gray: #f9f9f9;
+      --white: #ffffff;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-dark-text">
+  <!-- Header -->
+  <header class="bg-[#38b000] text-white py-4 px-8 shadow-md sticky top-0 z-50 flex justify-between items-center">
+    <a href="index.html">
+      <img src="logo-perpus-putih.png" alt="Logo Perpustakaan UPNVJ" class="h-12">
+    </a>
+
+    <nav class="flex space-x-6">
+      <a href="index.html" class="group transition duration-300">
+        Beranda
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="profil.html" class="group transition duration-300">
+        Profil
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="layanan.html" class="group transition duration-300">
+        Layanan
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="informasi.html" class="group transition duration-300">
+        Informasi
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="fasilitas.html" class="group transition duration-300">
+        Fasilitas
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="edocument.html" class="group transition duration-300">
+        E-Document
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="kerjasama.html" class="group transition duration-300">
+        Kerjasama
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Banner dengan gambar penuh, overlay gelap, dan teks di tengah -->
+  <div class="w-full relative bg-[url('banner-web-gedung-perpustakaan-upnvj.jpg')] bg-cover bg-center min-h-[400px] flex items-center justify-center">
+  <!-- Overlay gelap -->
+  <div class="absolute inset-0 bg-black/40 z-0 backdrop-blur-[2px]"></div>
+
+  <!-- Konten judul -->
+  <h1
+    class="relative z-10 text-8xl font-bold text-white text-center"
+    data-aos="zoom-in"
+    data-aos-duration="1000"
+  >
+    KERJASAMA
+    <span class="absolute inset-x-0 bottom-0 h-2 bg-light-green rounded-md -z-10"></span>
+  </h1>
+  </div>
+
+
+  <!-- Konten utama -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+  <h2 class="text-5xl font-bold text-[#38b000] text-center mb-6" data-aos="fade-up" data-aos-duration="1000">
+    Jaringan Kerjasama Perpustakaan
+  </h2>
+  <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+  
+  <p class="text-xl text-justify leading-relaxed mb-8" data-aos="fade-up" data-aos-duration="1000">
+    Perpustakaan UPN "Veteran" Jakarta menjalin kemitraan strategis dengan berbagai institusi, baik di tingkat nasional maupun internasional, guna meningkatkan kualitas layanan, pertukaran informasi, dan pengembangan koleksi digital. Kerjasama ini meliputi akses sumber daya informasi, pelatihan pustakawan, serta kolaborasi dalam pengembangan teknologi perpustakaan.
+  </p>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+    <!-- Kartu Kerjasama -->
+    <!--<div class="bg-white rounded-2xl shadow hover:shadow-lg p-6 transition duration-200">
+      <h3 class="text-lg font-semibold text-green-700">Perpustakaan Nasional RI</h3>
+      <p class="text-sm text-gray-600 mt-2">
+        Kolaborasi dalam akses sumber informasi digital nasional dan program peningkatan literasi informasi.
+      </p>
+      <p class="text-xs text-gray-500 mt-3">🗓️ Sejak: 2021</p>
+      <a href="https://www.perpusnas.go.id/" target="_blank" class="text-sm text-blue-600 hover:underline">
+        🌐 Lihat Website Partner
+      </a>
+      <a href="#" class="mt-3 inline-block px-4 py-2 text-sm bg-green-600 text-white rounded-md hover:bg-green-700 transition">
+        📄 Unduh Dokumen MoU
+      </a>
+    </div>-->
+
+    <div class="bg-white rounded-2xl shadow p-6 transition duration-200 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000">
+      <div>
+        <h3 class="text-lg text-center font-semibold text-[#38b000] mb-2 ">Perpustakaan Nasional RI</h3>
+        <img src="Foto\Kerjasama\pnri.png" alt="Logo Perpusnas" class="h-32 mx-auto mb-4 object-contain">
+        <p class="text-sm text-gray-600 min-h-[64px]">
+            Kolaborasi dalam akses sumber informasi digital nasional dan program peningkatan literasi informasi.
+        </p>
+        <p class="text-xs text-gray-500 mt-3">🗓️ 2024-2027</p>
+        <a href="https://www.perpusnas.go.id/" target="_blank" class="text-sm text-blue-600 hover:underline">
+            🌐 Lihat Website Partner
+        </a>
+      </div>
+      <div class="mt-6 flex justify-center">
+        <a href="#" class="mt-3 inline-block px-4 py-2 text-sm text-white rounded-md bg-[#38b000] hover:bg-[#2a7d00] transition">
+            📄 Unduh Dokumen MoU
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg p-6 transition duration-200 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000">
+      <div>
+        <h3 class="text-lg text-center font-semibold text-[#38b000] mb-2 ">Indonesia OneSearch</h3>
+        <img src="Foto\Kerjasama\ios.png"alt="Logo OS" class="h-32 mx-auto mb-4 object-contain">
+        <p class="text-sm text-gray-600 min-h-[64px]">
+            Integrasi katalog UPNVJ ke dalam platform pencarian nasional milik Perpusnas untuk akses terbuka.
+        </p>
+        <p class="text-xs text-gray-500 mt-3">🗓️ 2019-sekarang</p>
+        <a href="https://onesearch.id/" target="_blank" class="text-sm text-blue-600 hover:underline">
+            🌐 Lihat Website Partner
+        </a>
+      </div>
+      <div class="mt-6 flex justify-center">
+        <a href="#" class="mt-3 inline-block px-4 py-2 text-sm text-white rounded-md bg-[#38b000] hover:bg-[#2a7d00] transition">
+            📄 Unduh Dokumen MoU
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg p-6 transition duration-200 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000">
+      <div>
+        <h3 class="text-lg text-center font-semibold text-[#38b000] mb-2 ">Perpustakaan UPI</h3>
+        <img src="Foto\Kerjasama\logoupi.jpg"alt="Logo UPI" class="h-32 mx-auto mb-4 object-contain">
+        <p class="text-sm text-gray-600 min-h-[64px]">
+            Kolaborasi dalam pertukaran informasi koleksi, akses digital, dan pengembangan layanan referensi antarperpustakaan.
+        </p>
+        <p class="text-xs text-gray-500 mt-3">🗓️ 2021-2026</p>
+        <a href="https://perpustakaan.upi.edu/" target="_blank" class="text-sm text-blue-600 hover:underline">
+            🌐 Lihat Website Partner
+        </a>
+      </div>
+      <div class="mt-6 flex justify-center">
+        <a href="#" class="mt-3 inline-block px-4 py-2 text-sm text-white rounded-md bg-[#38b000] hover:bg-[#2a7d00] transition">
+            📄 Unduh Dokumen MoU
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg p-6 transition duration-200 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000">
+      <div>
+        <h3 class="text-lg text-center font-semibold text-[#38b000] mb-2 ">Forum Perpustakaan Perguruan Tinggi Indonesia (FPPTI)</h3>
+        <img src="Foto\Kerjasama\logodki_web.png"alt="Logo FPPTI" class="h-32 mx-auto mb-4 object-contain">
+        <p class="text-sm text-gray-600 min-h-[64px]">
+            Kerjasama dalam pengembangan kualitas layanan perpustakaan perguruan tinggi dan berbagi sumber daya.
+        </p>
+        <p class="text-xs text-gray-500 mt-3">🗓️ 2021-2025</p>
+        <a href="https://siska.fppti.or.id/detail/1108" target="_blank" class="text-sm text-blue-600 hover:underline">
+            🌐 Lihat Website Partner
+        </a>
+      </div>
+      <div class="mt-6 flex justify-center">
+        <a href="#" class="mt-3 inline-block px-4 py-2 text-sm text-white rounded-md bg-[#38b000] hover:bg-[#2a7d00] transition">
+            📄 Unduh Dokumen MoU
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg p-6 transition duration-200 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000">
+      <div>
+        <h3 class="text-lg text-center font-semibold text-[#38b000] mb-2 ">Pusat Pengelolaan Pengetahuan Universitas Padjadjaran</h3>
+        <img src="Foto\Kerjasama\logo-unpad1.png"alt="Logo Unpad" class="h-32 mx-auto mb-4 object-contain">
+        <p class="text-sm text-gray-600 min-h-[64px]">
+            Kerjasama dalam pengelolaan pengetahuan, integrasi repositori institusi, serta kolaborasi kegiatan ilmiah dan pelatihan pustakawan.
+        </p>
+        <p class="text-xs text-gray-500 mt-3">🗓️ 2022-2025</p>
+        <a href="https://library.unpad.ac.id/" target="_blank" class="text-sm text-blue-600 hover:underline">
+            🌐 Lihat Website Partner
+        </a>
+      </div>
+      <div class="mt-6 flex justify-center">
+        <a href="#" class="mt-3 inline-block px-4 py-2 text-sm text-white rounded-md bg-[#38b000] hover:bg-[#2a7d00] transition">
+            📄 Unduh Dokumen MoU
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg p-6 transition duration-200 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000">
+      <div>
+        <h3 class="text-lg text-center font-semibold text-[#38b000] mb-2 ">UPA Perpustakaan UPN "Veteran" Jawa Timur</h3>
+        <img src="Foto\Kerjasama\logounvjtm.png"alt="Logo UPNVJT" class="h-32 mx-auto mb-4 object-contain">
+        <p class="text-sm text-gray-600 min-h-[64px]">
+            Sinergi dalam peningkatan layanan perpustakaan, pemanfaatan koleksi bersama, dan pelaksanaan program literasi informasi.
+        </p>
+        <p class="text-xs text-gray-500 mt-3">🗓️ 2023-2028</p>
+        <a href="https://lib.upnjatim.ac.id/" target="_blank" class="text-sm text-blue-600 hover:underline">
+            🌐 Lihat Website Partner
+        </a>
+      </div>
+      <div class="mt-6 flex justify-center">
+        <a href="#" class="mt-3 inline-block px-4 py-2 text-sm text-white rounded-md bg-[#38b000] hover:bg-[#2a7d00] transition">
+            📄 Unduh Dokumen MoU
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg p-6 transition duration-200 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000">
+      <div>
+        <h3 class="text-lg text-center font-semibold text-[#38b000] mb-2 ">UPT Perpustakaan Universitas Trunojoyo Madura</h3>
+        <img src="Foto\Kerjasama\logo-utm.png"alt="Logo UTM" class="h-32 mx-auto mb-4 object-contain">
+        <p class="text-sm text-gray-600 min-h-[64px]">
+            Kerjasama dalam pemanfaatan sumber daya perpustakaan, akses koleksi digital, serta pelaksanaan kegiatan akademik dan pelatihan bersama.
+        </p>
+        <p class="text-xs text-gray-500 mt-3">🗓️ 2023-2026</p>
+        <a href="https://library.trunojoyo.ac.id/digilib" target="_blank" class="text-sm text-blue-600 hover:underline">
+            🌐 Lihat Website Partner
+        </a>
+      </div>
+      <div class="mt-6 flex justify-center">
+        <a href="#" class="mt-3 inline-block px-4 py-2 text-sm text-white rounded-md bg-[#38b000] hover:bg-[#2a7d00] transition">
+            📄 Unduh Dokumen MoU
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg p-6 transition duration-200 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000">
+      <div>
+        <h3 class="text-lg text-center font-semibold text-[#38b000] mb-2 ">UPT Perpustakaan Universitas Udayana</h3>
+        <img src="Foto\Kerjasama\logounud.png"alt="Logo Unud" class="h-32 mx-auto mb-4 object-contain">
+        <p class="text-sm text-gray-600 min-h-[64px]">
+            Kolaborasi dalam pengembangan layanan digital, pertukaran informasi ilmiah, dan peningkatan kompetensi pustakawan melalui program bersama.
+        </p>
+        <p class="text-xs text-gray-500 mt-3">🗓️ 2023-2026</p>
+        <a href="https://e-perpus.unud.ac.id/" target="_blank" class="text-sm text-blue-600 hover:underline">
+            🌐 Lihat Website Partner
+        </a>
+      </div>
+      <div class="mt-6 flex justify-center">
+        <a href="#" class="mt-3 inline-block px-4 py-2 text-sm text-white rounded-md bg-[#38b000] hover:bg-[#2a7d00] transition">
+            📄 Unduh Dokumen MoU
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg p-6 transition duration-200 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000">
+      <div>
+        <h3 class="text-lg text-center font-semibold text-[#38b000] mb-2 ">Forum Kerjasama Perpustakaan Perguruan Tinggi Negeri (FKP2TN)</h3>
+        <img src="Foto\Kerjasama\logo-fkp2tn.png"alt="Logo FKP2TN" class="h-32 mx-auto mb-4 object-contain">
+        <p class="text-sm text-gray-600 min-h-[64px]">
+            Kemitraan dalam jaringan nasional perpustakaan perguruan tinggi, berbagi sumber daya, serta pelaksanaan program peningkatan kualitas layanan dan literasi informasi.
+        </p>
+        <p class="text-xs text-gray-500 mt-3">🗓️ Januari-Desember 2024</p>
+        <a href="https://www.fkp2tn.org/" target="_blank" class="text-sm text-blue-600 hover:underline">
+            🌐 Lihat Website Partner
+        </a>
+      </div>
+      <div class="mt-6 flex justify-center">
+        <a href="#" class="mt-3 inline-block px-4 py-2 text-sm text-white rounded-md bg-[#38b000] hover:bg-[#2a7d00] transition">
+            📄 Unduh Dokumen MoU
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg p-6 transition duration-200 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000">
+      <div>
+        <h3 class="text-lg text-center font-semibold text-[#38b000] mb-2 ">UPA Perpustakaan UPN "Veteran" Yogyakarta</h3>
+        <img src="Foto\Kerjasama\logo_upn.png"alt="Logo UPNVYK" class="h-32 mx-auto mb-4 object-contain">
+        <p class="text-sm text-gray-600 min-h-[64px]">
+            Kolaborasi dalam optimalisasi layanan perpustakaan, integrasi akses koleksi, serta pengembangan program literasi dan kegiatan ilmiah bersama.
+        </p>
+        <p class="text-xs text-gray-500 mt-3">🗓️ 2024-2029</p>
+        <a href="https://www.upnyk.ac.id/" target="_blank" class="text-sm text-blue-600 hover:underline">
+            🌐 Lihat Website Partner
+        </a>
+      </div>
+      <div class="mt-6 flex justify-center">
+        <a href="#" class="mt-3 inline-block px-4 py-2 text-sm text-white rounded-md bg-[#38b000] hover:bg-[#2a7d00] transition">
+            📄 Unduh Dokumen MoU
+        </a>
+      </div>
+    </div>
+
+  </div>
+  </section>
+
+
+
+  <footer class="bg-[#333333] text-white py-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <img src="logo-perpus-putih.png" alt="Logo Perpustakaan UPNVJ" class="h-12 mb-4">
+        <p class="text-sm">UPT Perpustakaan UPN Veteran Jakarta merupakan unit pelaksana teknis di bidang perpustakaan yang mempunyai tugas melaksanakan pemberian layanan kepustakaan.</p>
+        <div class="flex space-x-4 mt-4">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <img src="Icon/Footer/facebook-round-color-icon.svg" alt="Facebook" class="h-6">
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <img src="Icon/Footer/ig-instagram-icon.svg" alt="Instagram" class="h-6">
+          </a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+            <img src="Icon/Footer/youtube-color-icon.svg" alt="YouTube" class="h-6">
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-lg text-[#38b000]  font-semibold mb-4">Alamat</h3>
+        <p class="text-sm">Kampus UPN "Veteran" Jakarta Gedung DR. Soetomo Lt. 3 dan Lt. 4 Jl. R.S. Fatmawati Pondok Labu - Jakarta Selatan 12450</p>
+        <p class="text-sm mt-2"><strong>Telepon:</strong> 021-75902835</p>
+        <p class="text-sm">
+          <strong>WhatsApp:</strong>
+          <a href="https://wa.me/6281234567890" target="_blank" class="text-[#38b000] font-bold hover:underline ml-1">+62 858-1159-1970</a><br>
+          <a href="https://wa.me/6289876543210" target="_blank" class="text-[#38b000] font-bold hover:underline ml-[87px]">+62 858-1159-1971</a>
+        </p>
+        <p class="text-sm"><strong>Email:</strong> <a href="mailto:library@upnvj.ac.id" class="text-[#38b000] hover:underline">library@upnvj.ac.id</a></p>
+      </div>
+      <div>
+        <h3 class="text-lg text-[#38b000] font-semibold mb-4">Lokasi</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d809.9323967591235!2d106.79483065675534!3d-6.3158380944621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69efc9a877deff%3A0x702518832f089921!2sPerpustakaan%20UPN%20Veteran%20Jakarta!5e0!3m2!1sen!2sid!4v1745768110809!5m2!1sen!2sid"
+          width="100%" 
+          height="150" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          class="rounded-lg">
+        </iframe>
+      </div>
+    </div>
+    <div class="text-center text-sm mt-8 border-t border-gray-700 pt-4">
+      &copy; 2025 Perpustakaan UPNVJ. All rights reserved.
+    </div>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

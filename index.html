@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beranda - Perpustakaan UPNVJ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    :root {
+      --primary-green: #006d5b;
+      --light-green: #e6f4f1;
+      --dark-text: #1e1e1e;
+      --light-gray: #f9f9f9;
+      --white: #ffffff;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-dark-text">
+  <!-- Header -->
+  <header class="bg-[#38b000] text-white py-4 px-8 shadow-md sticky top-0 z-50 flex justify-between items-center">
+    <a href="index.html">
+      <img src="logo-perpus-putih.png" alt="Logo Perpustakaan UPNVJ" class="h-12">
+    </a>
+
+    <nav class="flex space-x-6">
+      <a href="index.html" class="group transition duration-300">
+        Beranda
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <!--<a href="main page.html" class="group transition duration-300">
+        Beranda
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>-->
+      <a href="profil.html" class="group transition duration-300">
+        Profil
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="layanan.html" class="group transition duration-300">
+        Layanan
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="informasi.html" class="group transition duration-300">
+        Informasi
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="fasilitas.html" class="group transition duration-300">
+        Fasilitas
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="edocument.html" class="group transition duration-300">
+        E-Document
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="kerjasama.html" class="group transition duration-300">
+        Kerjasama
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+    </nav>
+  </header>
+
+  
+  <!-- Banner dengan gambar penuh, overlay gelap, dan teks di tengah -->
+<section id="top" class="relative h-[80vh] flex items-center justify-center text-white text-center bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('banner-web-gedung-perpustakaan-upnvj.jpg');">
+  <div class="px-4" data-aos="fade-up" data-aos-duration="1000">
+    <h1 class="text-4xl md:text-7xl font-bold mb-6" >Selamat Datang di Perpustakaan UPNVJ</h1>
+    <a href="#koleksi" class="inline-block mt-2 bg-[#38b000] hover:bg-[#2a7d00] text-white font-medium text-base px-6 py-3 rounded-lg transition">
+      Lihat Koleksi
+    </a>
+  </div>
+</section>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto py-4 px-4"> <!--bg-green-50 bg-gradient-to-r from-white via-green-100 to-white-->
+    
+    <!-- search bar -->
+
+<section class="py-5">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    
+    <h2 class="text-5xl font-bold text-[#38b000]" data-aos="fade-up" data-aos-duration="1000">Pencarian Koleksi</h2>
+    <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+
+    <!-- Button kategori -->
+    <div class="flex justify-center gap-3 mb-6 flex-wrap" data-aos="zoom-in" data-aos-duration="1000">
+      <button class="px-4 py-2 text-sm font-semibold rounded-lg bg-yellow-500 text-white shadow hover:bg-yellow-600 transition">
+        Library
+      </button>
+      <button class="px-4 py-2 text-sm font-semibold rounded-lg bg-[#38b000] hover:bg-[#2a7d00] text-white shadow transition">
+        Repository
+      </button>
+      <button class="px-4 py-2 text-sm font-semibold rounded-lg bg-[#38b000] hover:bg-[#2a7d00] text-white shadow transition">
+        E-Journal
+      </button>
+    </div>
+
+    <!-- Search bar -->
+    <form class="flex flex-col sm:flex-row justify-center items-center gap-4" data-aos="zoom-in" data-aos-duration="1000">
+      <input 
+        type="text" 
+        placeholder="Masukkan kata kunci dari judul, pengarang, atau subyek..." 
+        class="w-full sm:w-3/4 px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 transition" 
+      />
+      <button 
+        type="submit" 
+        class="px-6 py-3 text-white rounded-xl font-semibold bg-[#38b000] hover:bg-[#2a7d00] transition">
+        Cari
+      </button>
+    </form>
+    
+  </div>
+</section>
+
+
+    <!-- Profil Section -->
+    <section class="max-w-5xl mx-auto py-5">
+      <h2 class="text-5xl font-semibold text-[#38b000] text-center mb-6" data-aos="fade-up" data-aos-duration="1000">Profil Perpustakaan</h2>
+      <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-10" data-aos="zoom-in" data-aos-duration="1000">
+        <!-- Foto Profil / Gambar Perpustakaan -->
+        <div class="flex-1 w-36 h-64 rounded-lg overflow-hidden shadow-md border-2 border-gray-300">
+          <img src="foto-perpus2.jpg" alt="Foto Perpustakaan" class="object-cover w-full h-full" />
+        </div>
+
+        <!-- Narasi Profil -->
+        <div class="flex-1 text-gray-700">
+          <p class="text-xl leading-relaxed py-10">
+            📖 Perpustakaan UPN Veteran Jakarta adalah pusat informasi dan pembelajaran yang menyediakan koleksi fisik dan digital, serta fasilitas modern untuk mendukung kegiatan akademik dan penelitian.
+          </p>
+        </div>
+      </div>
+
+        <!-- Video Promo / Tutorial -->
+        <div class="py-6" data-aos="zoom-in" data-aos-duration="1000">
+          <div class="rounded-lg overflow-hidden aspect-w-16 aspect-h-9">
+            <iframe 
+              src="https://www.youtube.com/embed/D3TZMgxLMjs" 
+              title="Video Kegiatan Perpustakaan UPNVJ" 
+              frameborder="1" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen 
+              class="w-full h-[500px]">
+            </iframe>
+          </div>
+        </div>
+    </section>
+
+<section class="py-5">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-5xl md:text-5xl font-bold text-[#38b000] mb-8" data-aos="fade-up" data-aos-duration="1000">Layanan Kami</h2>
+    <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- Layanan Item -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 px-7 py-8 flex flex-col items-center text-center group"
+      data-aos="zoom-in" data-aos-duration="1000">
+        <div class="bg-green-50 p-4 rounded-full mb-6 transition group-hover:scale-110">
+          <img src="Icon/Layanan/icon-sirkulasi.svg" alt="Layanan Sirkulasi" class="h-10">
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-green-700 transition">Layanan Sirkulasi</h3>
+        <p class="text-gray-600 text-base leading-relaxed">Peminjaman, pengembalian, dan perpanjangan koleksi fisik perpustakaan.</p>
+          <!-- CTA -->
+          <div class="mt-8">
+            <a href="layanan.html" class="inline-block bg-[#38b000] hover:bg-[#2a7d00] text-white font-semibold px-6 py-3 rounded-xl transition duration-300 shadow">
+            Selengkapnya →
+            </a>
+          </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-8 flex flex-col items-center text-center group"
+      data-aos="zoom-in" data-aos-duration="1000">
+        <div class="bg-green-50 p-4 rounded-full mb-6 transition group-hover:scale-110">
+          <img src="Icon/Layanan/icon-referensi.svg" alt="Layanan Referensi" class="h-10">
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-green-700 transition">Layanan Referensi</h3>
+        <p class="text-gray-600 text-base leading-relaxed">Pendampingan pencarian informasi dan akses ke sumber referensi ilmiah.</p>
+        <!-- CTA -->
+          <div class="mt-8">
+            <a href="layanan.html" class="inline-block bg-[#38b000] hover:bg-[#2a7d00] text-white font-semibold px-6 py-3 rounded-xl transition duration-300 shadow">
+            Selengkapnya →
+            </a>
+          </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-8 flex flex-col items-center text-center group"
+      data-aos="zoom-in" data-aos-duration="1000">
+        <div class="bg-green-50 p-4 rounded-full mb-6 transition group-hover:scale-110">
+          <img src="Icon/Layanan/icon-digital.svg" alt="Layanan Digital" class="h-10">
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-green-700 transition">Layanan Digital</h3>
+        <p class="text-gray-600 text-base leading-relaxed">Akses e-journal, repository, dan layanan berbasis teknologi informasi.</p>
+        <!-- CTA -->
+          <div class="mt-8">
+            <a href="layanan.html" class="inline-block bg-[#38b000] hover:bg-[#2a7d00] text-white font-semibold px-6 py-3 rounded-xl transition duration-300 shadow">
+            Selengkapnya →
+            </a>
+          </div>
+      </div>
+
+      <!-- Baris ke-2: Tengahin 2 card -->
+<div class="sm:col-span-2 lg:col-span-3 flex justify-center gap-8">
+  <!-- Card Audio Visual -->
+  <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-8 flex flex-col items-center text-center group w-full max-w-sm"
+  data-aos="zoom-in" data-aos-duration="1000">
+    <div class="bg-green-50 p-4 rounded-full mb-6 transition group-hover:scale-110">
+      <img src="Icon/Layanan/icon-audio-visual.svg" alt="Layanan Audio Visual" class="h-10">
+    </div>
+    <h3 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-green-700 transition">Layanan Audio Visual</h3>
+    <p class="text-gray-600 text-base leading-relaxed">Penyediaan akses koleksi multimedia seperti CD, DVD, dan video pembelajaran untuk menunjang proses belajar.</p>
+    <!-- CTA -->
+    <div class="mt-8">
+      <a href="layanan.html" class="inline-block bg-[#38b000] hover:bg-[#2a7d00] text-white font-semibold px-6 py-3 rounded-xl transition duration-300 shadow">
+        Selengkapnya →
+      </a>
+    </div>
+  </div>
+
+  <!-- Card Pendidikan -->
+  <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-8 flex flex-col items-center text-center group w-full max-w-sm"
+  data-aos="zoom-in" data-aos-duration="1000">
+    <div class="bg-green-50 p-4 rounded-full mb-6 transition group-hover:scale-110">
+      <img src="Icon/Layanan/icon-pendidikan.svg" alt="Layanan Pendidikan" class="h-10">
+    </div>
+    <h3 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-green-700 transition">Layanan Pendidikan</h3>
+    <p class="text-gray-600 text-base leading-relaxed">Edukasi pengguna melalui pelatihan literasi informasi, pengenalan katalog, dan pemanfaatan sumber digital perpustakaan.</p>
+    <!-- CTA -->
+    <div class="mt-8">
+      <a href="layanan.html" class="inline-block bg-[#38b000] hover:bg-[#2a7d00] text-white font-semibold px-6 py-3 rounded-xl transition duration-300 shadow">
+        Selengkapnya →
+      </a>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-5xl font-bold text-[#38b000] mb-4" data-aos="fade-up" data-aos-duration="1000">Informasi Perpustakaan</h2>
+    <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" data-aos="zoom-in" data-aos-duration="1000">
+      
+      <!-- Card: Jam Operasional -->
+      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <div class="text-4xl text-green-700 mb-4">
+          🕒
+        </div>
+        <h3 class="text-xl font-semibold text-green-800 mb-2">Jam Operasional</h3>
+        <p class="text-base text-gray-600 my-auto">Perpustakaan buka Senin–Jumat pukul 08.00–16.00. Sabtu dan Minggu tutup.</p>
+        <a href="#" class="mt-4  bg-[#38b000] hover:bg-[#2a7d00] text-white text-sm font-semibold px-5 py-2 rounded-md transition">Selengkapnya</a>
+      </div>
+
+      <!-- Card: Tata Tertib -->
+      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <div class="text-4xl text-green-700 mb-4">
+          📝
+        </div>
+        <h3 class="text-xl font-semibold text-green-800 mb-2">Tata Tertib</h3>
+        <p class="text-base text-gray-600 my-auto">Pengguna wajib menjaga ketenangan, tidak membawa makanan/minuman, dan mematuhi aturan perpustakaan.</p>
+        <a href="#" class="mt-6 b bg-[#38b000] hover:bg-[#2a7d00] text-white text-sm font-semibold px-5 py-2 rounded-md transition">Selengkapnya</a>
+      </div>
+
+      <!-- Card: Keanggotaan -->
+      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <div class="text-4xl text-green-700 mb-4">
+          👥
+        </div>
+        <h3 class="text-xl font-semibold text-green-800 mb-2">Keanggotaan</h3>
+        <p class="text-base text-gray-600 my-auto">Keanggotaan perpustakaan terbuka untuk mahasiswa, dosen, dan staf UPNVJ dengan kartu identitas resmi.</p>
+        <a href="#" class="mt-6  bg-[#38b000] hover:bg-[#2a7d00] text-white text-sm font-semibold px-5 py-2 rounded-md transition">Selengkapnya</a>
+      </div>
+
+      <!-- Card: Diagram Alur -->
+      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <div class="text-4xl text-green-700 mb-4">
+          🧩
+        </div>
+        <h3 class="text-xl font-semibold text-green-800 mb-2">Diagram Alur</h3>
+        <p class="text-base text-gray-600 my-auto">Ikuti prosedur peminjaman, pengembalian, dan layanan lainnya sesuai diagram alur yang tersedia.</p>
+        <a href="#" class="mt-6 bg-[#38b000] hover:bg-[#2a7d00] text-white text-sm font-semibold px-5 py-2 rounded-md transition">Selengkapnya</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="max-w-7xl mx-auto px-4">
+    
+    <!-- Heading -->
+    <h2 class="text-5xl font-bold text-center text-[#38b000] mb-6" data-aos="fade-up" data-aos-duration="1000">UPNVJ Library News</h2>
+    <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+
+    <!-- Filter kategori -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up" data-aos-duration="1000">
+      <button class="px-4 py-2 bg-green-600 text-white text-sm rounded-full hover:bg-green-700 transition">Semua</button>
+      <button class="px-4 py-2 bg-green-100 text-green-700 text-sm rounded-full hover:bg-green-200 transition">Artikel Buku</button>
+      <button class="px-4 py-2 bg-green-100 text-green-700 text-sm rounded-full hover:bg-green-200 transition">Berita</button>
+      <button class="px-4 py-2 bg-green-100 text-green-700 text-sm rounded-full hover:bg-green-200 transition">Hari Peringatan</button>
+      <button class="px-4 py-2 bg-green-100 text-green-700 text-sm rounded-full hover:bg-green-200 transition">Pengumuman</button>
+      <button class="px-4 py-2 bg-green-100 text-green-700 text-sm rounded-full hover:bg-green-200 transition">Uncategorized</button>
+    </div>
+
+    <!-- Grid berita -->
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" data-aos="zoom-in" data-aos-duration="1000">
+      
+      <!-- Card berita -->
+      <div class="bg-gray-50 rounded-2xl shadow hover:-translate-y-2 hover:shadow-xl transform transition duration-300 overflow-hidden flex flex-col">
+        <!-- Kategori -->
+        <div class="bg-green-600 text-white text-xs font-medium px-3 py-1 w-fit rounded-br-xl">
+          Hari Peringatan
+        </div>
+
+        <!-- Isi -->
+        <div class="p-5 flex-1 flex flex-col">
+          <img src="Foto\feed-selamat-hari-paskah.jpg" alt="Berita" class="rounded-lg mb-4 object-cover h-full w-full">
+
+          <h3 class="text-lg font-semibold text-green-800 mb-1">Selamat memperingati hari Paskah</h3>
+          <p class="text-sm text-gray-500 mb-2">Library UPNVJ • 20 April 2025</p>
+          <p class="text-sm text-gray-700 mb-4">Semoga Minggu Paskah ini menginspirasi Anda akan harapan baru, kebahagiaan, dan kelimpahan.</p>
+
+          <a href="#" class="mt-auto text-green-700 font-medium text-sm hover:underline">Baca Selengkapnya →</a>
+        </div>
+      </div>
+
+      <!-- Card berita -->
+      <div class="bg-gray-50 rounded-2xl shadow hover:-translate-y-2 hover:shadow-xl transform transition duration-300 overflow-hidden flex flex-col">
+        <!-- Kategori -->
+        <div class="bg-green-600 text-white text-xs font-medium px-3 py-1 w-fit rounded-br-xl">
+          Berita
+        </div>
+
+        <!-- Isi -->
+        <div class="p-5 flex-1 flex flex-col">
+          <img src="Foto\feed-pengumuman-perpus-upnvj-tutup-selama-sterilisasi-utbk-snbt-2025.jpg" alt="Berita" class="rounded-lg mb-4 object-cover h-full w-full">
+
+          <h3 class="text-lg font-semibold text-green-800 mb-1">Perpustakaan UPNVJ Tutup Selama Sterilisasi</h3>
+          <p class="text-sm text-gray-500 mb-2">Library UPNVJ • 17 April 2025</p>
+          <p class="text-sm text-gray-700 mb-4">Perpustakaan akan tutup selama pelaksanaan UTBK-SNBT, 21 April – 07 Mei 2025.</p>
+
+          <a href="#" class="mt-auto text-green-700 font-medium text-sm hover:underline">Baca Selengkapnya →</a>
+        </div>
+      </div>
+
+      <!-- Card berita -->
+      <div class="bg-gray-50 rounded-2xl shadow hover:-translate-y-2 hover:shadow-xl transform transition duration-300 overflow-hidden flex flex-col">
+        <!-- Kategori -->
+        <div class="bg-green-600 text-white text-xs font-medium px-3 py-1 w-fit rounded-br-xl">
+          Artikel Buku
+        </div>
+
+        <!-- Isi -->
+        <div class="p-5 flex-1 flex flex-col">
+          <img src="Foto\feed-koleksi-buku-ubah-mindset-yang-tersedia-di-perpus-upnvj_01.jpg" alt="Berita" class="rounded-lg mb-4 object-cover h-full w-full">
+
+          <h3 class="text-lg font-semibold text-green-800 mb-1">Buku Rekomendasi untuk Ubah Mindset</h3>
+          <p class="text-sm text-gray-500 mb-2">Library UPNVJ • 17 April 2025</p>
+          <p class="text-sm text-gray-700 mb-4">Temukan buku-buku rekomendasi untuk mengubah mindset Anda di perpustakaan UPNVJ.</p>
+
+          <a href="#" class="mt-auto text-green-700 font-medium text-sm hover:underline">Baca Selengkapnya →</a>
+        </div>
+      </div>
+
+      <!-- Tambahkan card lainnya sesuai kebutuhan... -->
+
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-5xl font-bold text-center text-[#38b000] mb-4" data-aos="fade-up" data-aos-duration="1000">Fasilitas Perpustakaan</h2>
+    <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+
+    <div data-aos="zoom-in" data-aos-duration="1000">
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl shadow-md hover:-translate-y-2 hover:shadow-xl transform transition duration-300 p-8 flex flex-col items-center text-center">
+        <img src="foto-perpus3.jpg" alt="Sarana Umum" class="w-full h-full object-cover rounded-xl mb-4">
+        <h3 class="text-xl font-semibold text-green-700 mb-2">Sarana dan Prasarana</h3>
+        <p class="text-base text-gray-600">Ruang baca, area diskusi, internet gratis, dan ruang multimedia untuk mendukung kegiatan belajar.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-2 hover:shadow-xl transform transition duration-300 p-8 flex flex-col items-center text-center">
+        <img src="foto-perpus1 2.jpg" alt="Fasilitas Civitas" class="w-full h-full object-cover rounded-xl mb-4">
+        <h3 class="text-xl font-semibold text-green-700 mb-2">Fasilitas Civitas</h3>
+        <p class="text-base text-gray-600">Ruang kerja bersama, ruang seminar, komputer, dan fasilitas pendukung lainnya untuk mahasiswa dan dosen.</p>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-10">
+      <a href="fasilitas.html" class="inline-block bg-[#38b000] hover:bg-[#2a7d00] text-white px-6 py-3 rounded-xl font-medium transition">
+        Lihat Semua Fasilitas →
+      </a>
+    </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-5xl font-bold text-[#38b000] mb-4" data-aos="fade-up" data-aos-duration="1000">Koleksi Digital</h2>
+    <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+    <p class="text-gray-600 max-w-2xl mx-auto text-lg mb-10" data-aos="fade-up" data-aos-duration="1000">
+      Jelajahi koleksi digital kami seperti e-book, jurnal online, dan skripsi mahasiswa yang dapat diakses kapan saja untuk mendukung kebutuhan akademik Anda.
+    </p>
+
+    <!-- Menu Akses Cepat -->
+    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3" data-aos="zoom-in" data-aos-duration="1000">
+      
+      <!-- E-Book -->
+      <a href="https://link-ebook.upnvj.ac.id" target="_blank" class="flex flex-col items-center bg-green-50 hover:bg-green-100 rounded-xl px-6 py-5 transition">
+        <span class="text-lg font-semibold text-green-800 mb-1">E-Book</span>
+        <p class="text-sm text-gray-600 text-center">Akses buku digital UPNVJ dari mana saja.</p>
+      </a>
+
+      <!-- Jurnal Online -->
+      <a href="https://link-jurnal.upnvj.ac.id" target="_blank" class="flex flex-col items-center bg-green-50 hover:bg-green-100 rounded-xl px-6 py-5 transition">
+        <span class="text-lg font-semibold text-green-800 mb-1">Jurnal Online</span>
+        <p class="text-sm text-gray-600 text-center">Jurnal nasional & internasional untuk penelitian dan pembelajaran.</p>
+      </a>
+
+      <!-- Skripsi -->
+      <a href="https://link-skripsi.upnvj.ac.id" target="_blank" class="flex flex-col items-center bg-green-50 hover:bg-green-100 rounded-xl px-6 py-5 transition">
+        <span class="text-lg font-semibold text-green-800 mb-1">Skripsi & Tugas Akhir</span>
+        <p class="text-sm text-gray-600 text-center">Karya ilmiah mahasiswa sebagai referensi akademik.</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="e-resources" class="py-5">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-5xl font-bold text-[#38b000] text-center mb-6" data-aos="fade-up" data-aos-duration="1000">E-Resources</h2>
+    <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+    <!-- Subjudul kategori -->
+    <h3 class="text-3xl font-semibold text-center text-green-700 my-6" data-aos="fade-up" data-aos-duration="1000">Database E-Journal</h3>
+
+    <!-- Grid Resource Cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="zoom-in" data-aos-duration="1000">
+      
+      <!-- Resource Card -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-wiley.png" alt="Wiley Online Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">Wiley Online Library</h4>
+        <p class="text-sm text-gray-600 my-5">Koleksi 27,000+ buku online dan jurnal sebagai referensi.</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- ProQuest -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-proquest-library.png" alt="ProQuest Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">ProQuest Library</h4>
+        <p class="text-sm text-gray-600 my-auto">Jurnal ilmiah, buku, disertasi & tesis, dari semua sumber.</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- Emerald Insight -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-emerald-insight-web.png" alt="Emerald Insight" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">Emerald Insight</h4>
+        <p class="text-sm text-gray-600 my-auto">Artikel jurnal, studi kasus, kutipan awal.</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- GEJ Library -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-global-ejournal-library.png" alt="Global Ejournal Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">GEJ Library</h4>
+        <p class="text-sm text-gray-600 my-auto">Koleksi-koleksi E-journal dari Global Ejournal Library.</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Subjudul kategori -->
+    <h3 class="text-3xl font-semibold text-center text-green-700 my-6" data-aos="fade-up" data-aos-duration="1000">Database E-Book</h3>
+
+    <!-- Grid Resource Cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="zoom-in" data-aos-duration="1000">
+      
+      <!-- Resource Card -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon\Eresources\button-proquest-2.png" alt="Wiley Online Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">ProQuest Ebook Central</h4>
+        <p class="text-sm text-gray-600 my-5">Online database yang berisi e-book milik ProQuest</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- ProQuest -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon\Eresources\button-mcgrawhill-web.jpg" alt="ProQuest Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">McGrawHill Access Medicine</h4>
+        <p class="text-sm text-gray-600 my-auto">Koleksi E-Resources Kedokteran dan Kesehatan</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- Emerald Insight -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon\Eresources\button-wiley-text-web.png" alt="Emerald Insight" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">Wiley e-text</h4>
+        <p class="text-sm text-gray-600 my-auto">E-Resources e-text terbitan wiley</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- GEJ Library -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-emerald-insight-web.png" alt="Global Ejournal Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">Emerald Insight</h4>
+        <p class="text-sm text-gray-600 my-auto">Artikel jurnal, studi kasus, kutipan awal.</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Subjudul kategori -->
+    <h3 class="text-3xl font-semibold text-center text-green-700 my-6" data-aos="fade-up" data-aos-duration="1000">Digital Library</h3>
+
+    <!-- Grid Resource Cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-6" data-aos="zoom-in" data-aos-duration="1000">
+      
+      <!-- Resource Card -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-kubuku-2.png" alt="Wiley Online Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">Kubuku UPNVJ</h4>
+        <p class="text-sm text-gray-600 mb-4">Aplikasi Perpustakaan Digital Library UPN Veteran Jakarta</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- ProQuest -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-digilib-upnvj.png" alt="ProQuest Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">Digilib UPNVJ</h4>
+        <p class="text-sm text-gray-600 mb-4">Perpustakaan Digital Akses Dari Website Digilib UPNVJ</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Subjudul kategori -->
+    <h3 class="text-3xl font-semibold text-center text-green-700 my-6" data-aos="fade-up" data-aos-duration="1000">UPNVJ Literature</h3>
+
+    <!-- Grid Resource Cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="zoom-in" data-aos-duration="1000">
+      
+      <!-- Resource Card -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-OPAC-perpustakaan-upnvj.png" alt="Wiley Online Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">Website OPAC Perpustakaan UPNVJ</h4>
+        <p class="text-sm text-gray-600 my-5">Website OPAC Perpustakaan UPNVJ</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- ProQuest -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-repository-upnvj-web.png" alt="ProQuest Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">Repository UPNVJ</h4>
+        <p class="text-sm text-gray-600 my-auto">Kumpulan arsip karya ilmiah civitas UPNVJ</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- Emerald Insight -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-ejournal-upnvj-web.png" alt="Emerald Insight" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">E-Journal UPNVJ</h4>
+        <p class="text-sm text-gray-600 my-auto">Koleksi E-Journal UPN "Veteran" Jakarta</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- GEJ Library -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-eresources-opoc-android.png" alt="Global Ejournal Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">Apps OPAC UPNVJ</h4>
+        <p class="text-sm text-gray-600 my-auto">Sistem pencarian koleksi di Perpustakaan UPNVJ</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Subjudul kategori -->
+    <h3 class="text-3xl font-semibold text-center text-green-700 my-6" data-aos="fade-up" data-aos-duration="1000">Research Tool</h3>
+
+    <!-- Grid Resource Cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="zoom-in" data-aos-duration="1000">
+      
+      <!-- Resource Card -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-scopus.png" alt="Wiley Online Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">Scopus</h4>
+        <p class="text-sm text-gray-600 my-5">Layanan indeksasi dan penyedia database jurnal terbesar saat ini.</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- ProQuest -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-indonesia-onesearch-web.png" alt="ProQuest Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">Indonesia Onesearch</h4>
+        <p class="text-sm text-gray-600 my-5">Sebuah pintu pencarian tunggal untuk semua koleksi publik</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- Emerald Insight -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-rama-repository.png" alt="Emerald Insight" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">RAMA REPOSITORY</h4>
+        <p class="text-sm text-gray-600 my-5">Repositori nasional : skripsi, tesis, disertasi, dan laporan penelitian</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- GEJ Library -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-turnitin.png" alt="Global Ejournal Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800 mb-2">Turnitin</h4>
+        <p class="text-sm text-gray-600 my-auto">Alat cek plagiarisme, memeriksa keaslian, dan keakuratan karya tulis</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subjudul kategori -->
+    <h3 class="text-3xl font-semibold text-center text-green-700 my-6" data-aos="fade-up" data-aos-duration="1000">Our Resources</h3>
+
+    <!-- Grid Resource Cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="zoom-in" data-aos-duration="1000">
+      
+      <!-- Resource Card -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-eresources-perpusnas-ri.png" alt="Wiley Online Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800">E-Resources Perpusnas RI</h4>
+        <p class="text-sm text-gray-600 my-auto">Dengan koleksi dari 34 penerbit E-Resources</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- ProQuest -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-repository-kemdikbud.png" alt="ProQuest Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800">Repository Kemdikbud</h4>
+        <p class="text-sm text-gray-600 my-5">Database karya ilmiah yang tersimpan di KEMDIKBUD RI</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- Emerald Insight -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-pijar-upi-oalib.png" alt="Emerald Insight" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800">PIJAR OALIB UPI</h4>
+        <p class="text-sm text-gray-600 my-auto">Portal indexer berbagai sumber belajar terbuka dari berbagai portal</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+
+      <!-- GEJ Library -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-2 hover:shadow-xl transform transition duration-300">
+        <img src="Icon/Eresources/button-usulan-buku-UPNVJ-web.png" alt="Global Ejournal Library" class="h-20 object-contain mb-4">
+        <h4 class="text-base font-semibold text-gray-800">Usulan Buku UPNVJ</h4>
+        <p class="text-sm text-gray-600 my-auto">Link form usulan buku bagi civitas UPN "Veteran" Jakarta</p>
+        <div class="flex gap-2">
+          <a href="#" class="px-4 py-2 bg-[#38b000] text-white rounded-lg text-sm hover:bg-[#2a7d00] transition">Panduan</a>
+          <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg text-sm hover:bg-gray-300 transition">Tautan</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-5 text-center">
+  <h2 class="text-4xl font-bold text-[#38b000] mb-2" data-aos="fade-up" data-aos-duration="1000">SOSIAL MEDIA</h2>
+  <div class="w-20 h-1 bg-yellow-500 mx-auto mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+
+  <div class="flex justify-center flex-wrap gap-10" data-aos="zoom-in" data-aos-duration="1000">
+
+    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+      <img src="Icon/Footer/facebook-round-color-icon.svg" alt="Facebook" class="h-16 w-16">
+    </a>
+    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+      <img src="Icon/Footer/ig-instagram-icon.svg" alt="Instagram" class="h-16 w-16">
+    </a>
+    <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+      <img src="Icon/Footer/youtube-color-icon.svg" alt="YouTube" class="h-16 w-16">
+    </a>
+    <a href="https://tiktok.com" target="_blank" aria-label="Tiktok">
+      <img src="Icon\Footer\tiktok-icon.png" alt="Tiktok" class="h-16 w-16">
+    </a>
+    <a href="https://x.com" target="_blank" aria-label="X">
+      <img src="Icon\Footer\twitter-color-icon.png" alt="X" class="h-16 w-16">
+    </a>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-[#38b000] text-center mb-2 uppercase" data-aos="fade-up" data-aos-duration="1000">Aplikasi Perpustakaan Digital : Library UPNVJ</h2>
+    <div class="w-20 h-1 bg-yellow-500 mx-auto mb-10 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+
+    <div class="space-y-4" data-aos="zoom-in" data-aos-duration="1000">
+      <!-- Accordion Item -->
+      <div x-data="{ open: false }" class="border border-[#38b000] rounded-xl overflow-hidden shadow-sm">
+        <button @click="open = !open" class="w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-green-700 hover:bg-green-50 transition">
+          Bagaimana cara download aplikasi E-book Library UPN Veteran Jakarta?
+          <svg x-show="!open" class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+          <svg x-show="open" x-cloak class="w-5 h-5 transform rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div x-show="open" x-transition class="px-5 py-5 text-base text-gray-800 space-y-2">
+          <p>Aplikasi E-book Library UPN “Veteran” Jakarta tersedia pada versi Android, iOS, dan Windows.</p>
+          <ul class="list-disc list-inside space-y-1">
+            <li><strong>Android:</strong> Cari di Playstore dengan kata kunci “library UPNVJ”</li>
+            <li><strong>iOS:</strong> Cari di Appstore dengan kata kunci “e-library upn veteran jakarta”</li>
+            <li><strong>Windows:</strong> Download melalui tautan resmi dari website perpustakaan</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Accordion Item -->
+      <div x-data="{ open: false }" class="border border-[#38b000] rounded-xl overflow-hidden shadow-sm">
+        <button @click="open = !open" class="w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-green-700 hover:bg-green-50 transition">
+          Bagaimana cara login E-book Library UPNVJ?
+          <svg x-show="!open" class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+          <svg x-show="open" x-cloak class="w-5 h-5 transform rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div x-show="open" x-transition class="px-5 py-5 text-base text-gray-800">
+          <p class="pb-2">Akun telah otomatis dibuat oleh Perpustakaan. Ikuti langkah berikut untuk mengeceknya.</p>
+          <ol class="list-decimal list-inside space-y-1">
+            <li>Cek email</li>
+              <ul class="list-disc list-inside space-y-1 pl-4">
+                <li>Dosen/tendik: cek email di <a href="sim.upnvj.ac.id" class="text-[#38b000] hover:text-[#2a7d00]">sim.upnvj.ac.id</a></li>
+                <li>Mahasiswa: cek email di <a href="akademik.upnvj.ac.id" class="text-[#38b000] hover:text-[#2a7d00]">akademik.upnvj.ac.id</a></li>
+              </ul>
+            <li>Cari Pesan “kubuku” atau “library” di kotak pencarian email</li>
+            <li>Buka email tersebut untuk melihat username dan password login aplikasi e-book</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Accordion Item -->
+      <div x-data="{ open: false }" class="border border-[#38b000] rounded-xl overflow-hidden shadow-sm">
+        <button @click="open = !open" class="w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-green-700 hover:bg-green-50 transition">
+          Apa saja fitur membaca yang tersedia pada E-book Library UPNVJ?
+          <svg x-show="!open" class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+          <svg x-show="open" x-cloak class="w-5 h-5 transform rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div x-show="open" x-transition class="px-5 py-5 text-base text-gray-800 leading-relaxed">
+          Aplikasi menyediakan beragam fitur baca seperti mode terang/gelap, forum diskusi, salin teks, penyorotan, garis bawah, coretan, alat tinta, komentar, serta pilihan scroll vertikal/horizontal, flip mode, dan thumbnail view untuk pengalaman membaca yang lebih interaktif.
+        </div>
+      </div>
+
+      <!-- Accordion Item -->
+      <div x-data="{ open: false }" class="border border-[#38b000] rounded-xl overflow-hidden shadow-sm">
+        <button @click="open = !open" class="w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-green-700 hover:bg-green-50 transition">
+          Ada berapa banyak judul koleksi E-book yang tersedia?
+          <svg x-show="!open" class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+          <svg x-show="open" x-cloak class="w-5 h-5 transform rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div x-show="open" x-transition class="px-5 py-5 text-base text-gray-800 leading-relaxed">
+          Tersedia 897 judul E-book di aplikasi Library UPN Veteran Jakarta yang dapat diakses sebagai referensi digital oleh civitas akademika.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#333333] text-white py-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <img src="logo-perpus-putih.png" alt="Logo Perpustakaan UPNVJ" class="h-12 mb-4">
+        <p class="text-sm">UPT Perpustakaan UPN Veteran Jakarta merupakan unit pelaksana teknis di bidang perpustakaan yang mempunyai tugas melaksanakan pemberian layanan kepustakaan.</p>
+        <div class="flex space-x-4 mt-4">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <img src="Icon/Footer/facebook-round-color-icon.svg" alt="Facebook" class="h-6">
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <img src="Icon/Footer/ig-instagram-icon.svg" alt="Instagram" class="h-6">
+          </a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+            <img src="Icon/Footer/youtube-color-icon.svg" alt="YouTube" class="h-6">
+          </a>
+          <a href="https://tiktok.com" target="_blank" aria-label="Tiktok">
+            <img src="Icon\Footer\tiktok-icon.png" alt="Tiktok" class="h-6">
+          </a>
+          <a href="https://x.com" target="_blank" aria-label="X">
+            <img src="Icon\Footer\twitter-color-icon.png" alt="X" class="h-6">
+          </a>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <h3 class="text-lg text-[#38b000]  font-semibold mb-4">Alamat</h3>
+        <p class="text-sm">Kampus UPN "Veteran" Jakarta Gedung DR. Soetomo Lt. 3 dan Lt. 4 Jl. R.S. Fatmawati Pondok Labu - Jakarta Selatan 12450</p>
+        <p class="text-sm mt-2"><strong>Telepon:</strong> 021-75902835</p>
+        <p class="text-sm">
+          <strong>WhatsApp:</strong>
+          <a href="https://wa.me/6281234567890" target="_blank" class="text-[#38b000] font-bold hover:underline ml-1">+62 858-1159-1970</a><br>
+          <a href="https://wa.me/6289876543210" target="_blank" class="text-[#38b000] font-bold hover:underline ml-[87px]">+62 858-1159-1971</a>
+        </p>
+        <p class="text-sm"><strong>Email:</strong> <a href="mailto:library@upnvj.ac.id" class="text-[#38b000] font-bold hover:underline">library@upnvj.ac.id</a></p>
+      </div>
+      <div>
+        <h3 class="text-lg text-[#38b000] font-semibold mb-4">Lokasi</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d809.9323967591235!2d106.79483065675534!3d-6.3158380944621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69efc9a877deff%3A0x702518832f089921!2sPerpustakaan%20UPN%20Veteran%20Jakarta!5e0!3m2!1sen!2sid!4v1745768110809!5m2!1sen!2sid"
+          width="100%" 
+          height="150" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          class="rounded-lg">
+        </iframe>
+      </div>
+    </div>
+    <div class="text-center text-sm mt-8 border-t border-gray-700 pt-4">
+      &copy; 2025 Perpustakaan UPNVJ. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <div 
+  x-data="{ show: false }" 
+  x-init="window.addEventListener('scroll', () => show = window.scrollY > 200)" 
+  x-show="show" 
+  x-transition 
+  class="fixed bottom-6 right-6 z-50"
+>
+  <a href="#top"
+   class="fixed bottom-6 right-6 z-50 bg-[#38b000] hover:bg-[#2a7d00] text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition"
+   title="Kembali ke atas">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+  </svg>
+</a>
+  </div>
+
+</body>
+</html>

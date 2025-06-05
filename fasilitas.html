@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan - Perpustakaan UPNVJ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    :root {
+      --primary-green: #006d5b;
+      --light-green: #e6f4f1;
+      --dark-text: #1e1e1e;
+      --light-gray: #f9f9f9;
+      --white: #ffffff;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-dark-text">
+  <!-- Header -->
+  <header class="bg-[#38b000] text-white py-4 px-8 shadow-md sticky top-0 z-50 flex justify-between items-center">
+    <a href="index.html">
+      <img src="logo-perpus-putih.png" alt="Logo Perpustakaan UPNVJ" class="h-12">
+    </a>
+
+    <nav class="flex space-x-6">
+      <a href="index.html" class="group transition duration-300">
+        Beranda
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="profil.html" class="group transition duration-300">
+        Profil
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="layanan.html" class="group transition duration-300">
+        Layanan
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="informasi.html" class="group transition duration-300">
+        Informasi
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="fasilitas.html" class="group transition duration-300">
+        Fasilitas
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="edocument.html" class="group transition duration-300">
+        E-Document
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="kerjasama.html" class="group transition duration-300">
+        Kerjasama
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Banner dengan gambar penuh, overlay gelap, dan teks di tengah -->
+  <div class="w-full relative bg-[url('banner-web-gedung-perpustakaan-upnvj.jpg')] bg-cover bg-center min-h-[400px] flex items-center justify-center">
+  <!-- Overlay gelap -->
+  <div class="absolute inset-0 bg-black/40 z-0 backdrop-blur-[2px]"></div>
+
+  <!-- Konten judul -->
+  <h1
+    class="relative z-10 text-8xl font-bold text-white text-center"
+    data-aos="zoom-in"
+    data-aos-duration="1000"
+  >
+    FASILITAS
+    <span class="absolute inset-x-0 bottom-0 h-2 bg-light-green rounded-md -z-10"></span>
+  </h1>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 py-12 text-gray-800">
+    <h2 class="text-5xl font-bold text-[#38b000] text-center mb-6" data-aos="fade-up" data-aos-duration="1000">Fasilitas Perpustakaan</h2>
+    <div class="w-36 h-1 bg-yellow-500 mx-auto mt-4 mb-8 rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+    <p class="text-xl text-center p-4 leading-relaxed" data-aos="zoom-in" data-aos-duration="1000">
+      Perpustakaan UPNVJ menyediakan berbagai fasilitas untuk mendukung kenyamanan belajar, akses informasi, serta produktivitas seluruh civitas akademika.
+    </p>
+  
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+  <!-- Fasilitas 1: Ruang Baca -->
+  <div class="flex flex-col p-6 bg-white rounded-xl shadow hover:shadow-lg hover:scale-[1.02] transition-all duration-300" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="flex items-center gap-3 mb-2">
+      <img src="https://img.icons8.com/?size=100&id=102048&format=png&color=399F40" alt="Icon Ruang Baca" class="w-6 h-6">
+      <h3 class="text-xl font-semibold text-green-700">Ruang Baca</h3>
+    </div>
+    <p class="text-gray-700 text-lg text-justify mb-4">
+      <strong>Ruang baca</strong> disediakan sebagai tempat yang nyaman dan tenang untuk mendukung aktivitas civitas pengguna perpustakaan dalam membaca, belajar, serta menyelesaikan tugas akademik secara optimal.
+    </p>
+    <img src="Foto\Fasilitas\fasilitas-ruang-baca.jpg" alt="Foto Ruang Baca" class="w-full h-auto rounded-md shadow-sm object-cover">
+  </div>
+
+  <!-- Fasilitas 2: Ruang Diskusi -->
+  <div class="flex flex-col p-6 bg-white rounded-xl shadow hover:shadow-lg hover:scale-[1.02] transition-all duration-300" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="flex items-center gap-3 mb-2">
+      <img src="https://img.icons8.com/?size=100&id=v1rwCTcwJiTE&format=png&color=399F40" alt="Icon Ruang Diskusi" class="w-6 h-6">
+      <h3 class="text-xl font-semibold text-green-700">Ruang Diskusi</h3>
+    </div>
+    <p class="text-gray-700 text-lg text-justify mb-4">
+      <strong>Ruang diskusi</strong> disediakan sebagai tempat bagi pemustaka untuk berdiskusi, belajar kelompok, atau mengerjakan tugas kolaboratif tanpa mengganggu kenyamanan ruang baca utama.
+    </p>
+    <img src="Foto\Fasilitas\fasilitas-ruang-diskusi.jpg" alt="Foto Ruang Diskusi" class="w-full h-auto rounded-md shadow-sm object-cover">
+  </div>
+
+  <!-- Fasilitas 3: Bahan Pustaka -->
+  <div class="flex flex-col p-6 bg-white rounded-xl shadow hover:shadow-lg hover:scale-[1.02] transition-all duration-300" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="flex items-center gap-3 mb-2">
+      <img src="https://img.icons8.com/?size=100&id=zh6iCBHIF0Sy&format=png&color=399F40" alt="Icon Bahan Pustaka" class="w-6 h-6">
+      <h3 class="text-xl font-semibold text-green-700">Bahan Pustaka</h3>
+    </div>
+    <p class="text-gray-700 text-lg text-justify mb-4">
+      UPT Perpustakaan menyediakan berbagai <strong>bahan pustaka</strong>, mulai dari buku teks, jurnal, skripsi, hingga koleksi digital, yang dapat dimanfaatkan untuk menunjang kegiatan akademik dan penelitian.
+    </p>
+    <img src="Foto\Fasilitas\fasilitas-koleksi.jpg" alt="Foto Bahan Pustaka" class="w-full h-auto rounded-md shadow-sm object-cover">
+  </div>
+
+  <!-- Fasilitas 4: OPAC -->
+  <div class="flex flex-col p-6 bg-white rounded-xl shadow hover:shadow-lg hover:scale-[1.02] transition-all duration-300" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="flex items-center gap-3 mb-2">
+      <img src="https://img.icons8.com/?size=100&id=7846&format=png&color=399F40" alt="Icon OPAC" class="w-6 h-6">
+      <h3 class="text-xl font-semibold text-green-700">OPAC</h3>
+    </div>
+    <p class="text-gray-700 text-lg text-justify mb-4">
+      <strong>OPAC</strong> memudahkan pengguna menelusuri koleksi perpustakaan secara online berdasarkan judul, penulis, subjek, dan kategori lainnya, kapan pun dan di mana pun.
+    </p>
+    <img src="Foto\Fasilitas\fasilitas-OPAC.jpg" alt="Foto OPAC" class="w-full h-auto rounded-md shadow-sm object-cover">
+  </div>
+
+  <!-- Fasilitas 5: Loker -->
+  <div class="flex flex-col p-6 bg-white rounded-xl shadow hover:shadow-lg hover:scale-[1.02] transition-all duration-300" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="flex items-center gap-3 mb-2">
+      <img src="https://img.icons8.com/?size=100&id=uiRFIr4iWNIf&format=png&color=399F40" alt="Icon Loker" class="w-6 h-6">
+      <h3 class="text-xl font-semibold text-green-700">Loker</h3>
+    </div>
+    <p class="text-gray-700 text-lg text-justify mb-4">
+      Fasilitas <strong>loker</strong> disediakan untuk menyimpan barang pribadi selama berada di dalam perpustakaan, guna menjaga keamanan dan kenyamanan bersama.
+    </p>
+    <img src="Foto\Fasilitas\fasilitas-loker.jpg" alt="Foto Loker" class="w-full h-auto rounded-md shadow-sm object-cover">
+  </div>
+
+  <!-- Fasilitas 6: Ruang Musala -->
+  <div class="flex flex-col p-6 bg-white rounded-xl shadow hover:shadow-lg hover:scale-[1.02] transition-all duration-300" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="flex items-center gap-3 mb-2">
+      <img src="https://img.icons8.com/?size=100&id=10385&format=png&color=399F40" alt="Icon Musola" class="w-6 h-6">
+      <h3 class="text-xl font-semibold text-green-700">Ruang Musala</h3>
+    </div>
+    <p class="text-gray-700 text-lg text-justify mb-4">
+      Disediakan <strong>ruang musala </strong> yang bersih dan nyaman bagi pengunjung yang ingin melaksanakan ibadah dengan tenang di lingkungan perpustakaan.
+    </p>
+    <img src="Foto\Fasilitas\fasilitas-musala.jpeg" alt="Foto Musala" class="w-full h-auto rounded-md shadow-sm object-cover">
+  </div>
+  </div>
+  </section>
+
+  <footer class="bg-[#333333] text-white py-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <img src="logo-perpus-putih.png" alt="Logo Perpustakaan UPNVJ" class="h-12 mb-4">
+        <p class="text-sm">UPT Perpustakaan UPN Veteran Jakarta merupakan unit pelaksana teknis di bidang perpustakaan yang mempunyai tugas melaksanakan pemberian layanan kepustakaan.</p>
+        <div class="flex space-x-4 mt-4">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <img src="Icon/Footer/facebook-round-color-icon.svg" alt="Facebook" class="h-6">
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <img src="Icon/Footer/ig-instagram-icon.svg" alt="Instagram" class="h-6">
+          </a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+            <img src="Icon/Footer/youtube-color-icon.svg" alt="YouTube" class="h-6">
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-lg text-[#38b000]  font-semibold mb-4">Alamat</h3>
+        <p class="text-sm">Kampus UPN "Veteran" Jakarta Gedung DR. Soetomo Lt. 3 dan Lt. 4 Jl. R.S. Fatmawati Pondok Labu - Jakarta Selatan 12450</p>
+        <p class="text-sm mt-2"><strong>Telepon:</strong> 021-75902835</p>
+        <p class="text-sm">
+          <strong>WhatsApp:</strong>
+          <a href="https://wa.me/6281234567890" target="_blank" class="text-[#38b000] font-bold hover:underline ml-1">+62 858-1159-1970</a><br>
+          <a href="https://wa.me/6289876543210" target="_blank" class="text-[#38b000] font-bold hover:underline ml-[87px]">+62 858-1159-1971</a>
+        </p>
+        <p class="text-sm"><strong>Email:</strong> <a href="mailto:library@upnvj.ac.id" class="text-[#38b000] hover:underline">library@upnvj.ac.id</a></p>
+      </div>
+      <div>
+        <h3 class="text-lg text-[#38b000] font-semibold mb-4">Lokasi</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d809.9323967591235!2d106.79483065675534!3d-6.3158380944621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69efc9a877deff%3A0x702518832f089921!2sPerpustakaan%20UPN%20Veteran%20Jakarta!5e0!3m2!1sen!2sid!4v1745768110809!5m2!1sen!2sid"
+          width="100%" 
+          height="150" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          class="rounded-lg">
+        </iframe>
+      </div>
+    </div>
+    <div class="text-center text-sm mt-8 border-t border-gray-700 pt-4">
+      &copy; 2025 Perpustakaan UPNVJ. All rights reserved.
+    </div>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

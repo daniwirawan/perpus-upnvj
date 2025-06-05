@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan - Perpustakaan UPNVJ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    :root {
+      --primary-green: #006d5b;
+      --light-green: #e6f4f1;
+      --dark-text: #1e1e1e;
+      --light-gray: #f9f9f9;
+      --white: #ffffff;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-dark-text">
+  <!-- Header -->
+  <header class="bg-[#38b000] text-white py-4 px-8 shadow-md sticky top-0 z-50 flex justify-between items-center">
+    <a href="index.html">
+      <img src="logo-perpus-putih.png" alt="Logo Perpustakaan UPNVJ" class="h-12">
+    </a>
+
+    <nav class="flex space-x-6">
+      <a href="index.html" class="group transition duration-300">
+        Beranda
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="profil.html" class="group transition duration-300">
+        Profil
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="layanan.html" class="group transition duration-300">
+        Layanan
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="informasi.html" class="group transition duration-300">
+        Informasi
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="fasilitas.html" class="group transition duration-300">
+        Fasilitas
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="edocument.html" class="group transition duration-300">
+        E-Document
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+      <a href="kerjasama.html" class="group transition duration-300">
+        Kerjasama
+        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Banner dengan gambar penuh, overlay gelap, dan teks di tengah -->
+  <div class="w-full relative bg-[url('banner-web-gedung-perpustakaan-upnvj.jpg')] bg-cover bg-center min-h-[400px] flex items-center justify-center">
+  <!-- Overlay gelap -->
+  <div class="absolute inset-0 bg-black/40 z-0 backdrop-blur-[2px]"></div>
+
+  <!-- Konten judul -->
+  <h1
+    class="relative z-10 text-8xl font-bold text-white text-center"
+    data-aos="zoom-in"
+    data-aos-duration="1000"
+  >
+    E-DOCUMENT
+    <span class="absolute inset-x-0 bottom-0 h-2 bg-light-green rounded-md -z-10"></span>
+  </h1>
+  </div>
+
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 py-8">
+    
+    <!-- Description 
+    <section class="mb-8">
+      <p class="text-xl text-center text-justify text-gray-800 leading-relaxed">
+        Halaman E-Dokumen menyajikan kumpulan dokumen digital yang berkaitan dengan aktivitas 
+        dan layanan perpustakaan, baik yang berasal dari lingkungan internal UPN Veteran Jakarta 
+        maupun dari sumber eksternal. Dokumen internal mencakup Standar Operasional Prosedur (SOP), 
+        laporan tahunan, arsip kegiatan, dan dokumen administratif lainnya yang mendukung operasional
+        perpustakaan. Sementara itu, dokumen eksternal berisi informasi atau edaran resmi yang 
+        diterbitkan oleh lembaga lain seperti Perpustakaan Nasional atau kementerian terkait. Seluruh dokumen tersedia dalam format digital dan dapat diakses dengan mudah oleh civitas akademika UPNVJ untuk keperluan akademik maupun administratif. Fitur pencarian, filter kategori, dan pengurutan dokumen disediakan agar pengguna dapat menemukan informasi yang dibutuhkan secara cepat, efisien, dan nyaman.
+      </p>
+    </section>-->
+
+    <!-- Search Bar -->
+    <section class="mb-6" data-aos="fade-up" data-aos-duration="1000">
+      <div class="flex flex-col sm:flex-row gap-4 items-center">
+        <input type="text" placeholder="Cari dokumen berdasarkan judul atau kata kunci..." class="w-full sm:flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+        <button class="bg-[#38b000] hover:bg-[#2a7d00] text-white px-6 py-3 rounded-xl transition duration-200">
+          Cari
+        </button>
+      </div>
+    </section>
+
+    <!-- Filter & Sort Controls -->
+    <section class="mb-6" data-aos="fade-up" data-aos-duration="1000">
+      <div class="flex flex-col md:flex-row md:items-center gap-4">
+    
+        <!-- Filter Kategori -->
+        <div class="flex items-center gap-2">
+          <label for="filter" class="text-gray-700 font-medium">Kategori:</label>
+          <select id="filter" class="px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none">
+            <option value="semua">Semua</option>
+            <option value="sop">SOP</option>
+            <option value="laporan">Laporan</option>
+            <option value="arsip">Arsip</option>
+            <!-- Tambah kategori sesuai kebutuhan -->
+          </select>
+        </div>
+
+        <!-- Sort By -->
+        <div class="flex items-center gap-2">
+          <label for="sort" class="text-gray-700 font-medium">Urutkan:</label>
+          <select id="sort" class="px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none">
+            <option value="terbaru">Terbaru</option>
+            <option value="terlama">Terlama</option>
+            <option value="judul-asc">Judul A-Z</option>
+            <option value="judul-desc">Judul Z-A</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Document List -->
+    <section data-aos="fade-up" data-aos-duration="1000">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Daftar Dokumen</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Card -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition duration-200">
+          <h3 class="text-lg font-semibold text-green-700">SOP Layanan Sirkulasi</h3>
+          <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-700">
+            Internal
+          </span>
+          <p class="text-sm text-gray-600 mt-2">Dokumen Standar Operasional Prosedur layanan sirkulasi perpustakaan.</p>
+          <p class="text-xs text-gray-500 mt-2">🗓️ 12 Januari 2023</p>
+          <a href="#" class="inline-block mt-4 text-green-600 hover:text-green-800 font-medium">Lihat Dokumen →</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition duration-200">
+          <h3 class="text-lg font-semibold text-green-700">Laporan Tahunan Perpustakaan 2023</h3>
+          <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-700">
+            Internal
+          </span>
+          <p class="text-sm text-gray-600 mt-2">Laporan lengkap kegiatan dan statistik perpustakaan selama tahun 2023.</p>
+          <p class="text-xs text-gray-500 mt-2">🗓️ 12 Januari 2023</p>
+          <a href="#" class="inline-block mt-4 text-green-600 hover:text-green-800 font-medium">Lihat Dokumen →</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition duration-200">
+          <h3 class="text-lg font-semibold text-green-700">SOP Layanan Referensi</h3>
+          <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-700">
+            Internal
+          </span>
+          <p class="text-sm text-gray-600 mt-2">Prosedur pelayanan untuk membantu pengguna mencari dan menggunakan sumber referensi akademik.</p>
+          <p class="text-xs text-gray-500 mt-2">🗓️ 25 Februari 2023</p>
+          <a href="#" class="inline-block mt-4 text-green-600 hover:text-green-800 font-medium">Lihat Dokumen →</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition duration-200">
+          <h3 class="text-lg font-semibold text-green-700">Pedoman Tugas Akhir Mahasiswa</h3>
+          <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-700">
+            Internal
+          </span>
+          <p class="text-sm text-gray-600 mt-2">Dokumen yang menjelaskan alur, ketentuan, dan layanan perpustakaan terkait tugas akhir mahasiswa.</p>
+          <p class="text-xs text-gray-500 mt-2">🗓️ 10 Januari 2024</p>
+          <a href="#" class="inline-block mt-4 text-green-600 hover:text-green-800 font-medium">Lihat Dokumen →</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition duration-200">
+          <h3 class="text-lg font-semibold text-green-700">Daftar Koleksi Unggulan Perpustakaan</h3>
+          <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-700">
+            Internal
+          </span>
+          <p class="text-sm text-gray-600 mt-2">Informasi tentang koleksi buku dan referensi utama yang menjadi unggulan perpustakaan.</p>
+          <p class="text-xs text-gray-500 mt-2">🗓️ 15 Mei 2023</p>
+          <a href="#" class="inline-block mt-4 text-green-600 hover:text-green-800 font-medium">Lihat Dokumen →</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition duration-200">
+          <h3 class="text-lg font-semibold text-green-700">Laporan Tahunan Perpustakaan 2023</h3>
+          <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-700">
+            Internal
+          </span>
+          <p class="text-sm text-gray-600 mt-2">Laporan lengkap kegiatan dan statistik perpustakaan selama tahun 2023.</p>
+          <p class="text-xs text-gray-500 mt-2">🗓️ 7 Maret 2024</p>
+          <a href="#" class="inline-block mt-4 text-green-600 hover:text-green-800 font-medium">Lihat Dokumen →</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition duration-200">
+          <h3 class="text-lg font-semibold text-green-700">Surat Edaran Perpustakaan Nasional No. 04/2024</h3>
+          <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-700">
+            Eksternal
+          </span>
+          <p class="text-sm text-gray-600 mt-2">Edaran resmi mengenai pemanfaatan repositori digital nasional untuk seluruh perpustakaan perguruan tinggi.</p>
+          <p class="text-xs text-gray-500 mt-2">🗓️ 18 Maret 2024</p>
+          <a href="#" class="inline-block mt-4 text-green-600 hover:text-green-800 font-medium">Lihat Dokumen →</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition duration-200">
+          <h3 class="text-lg font-semibold text-green-700">Pedoman Layanan Digital oleh Kementerian Pendidikan</h3>
+          <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-700">
+            Eksternal
+          </span>
+          <p class="text-sm text-gray-600 mt-2">Panduan penerapan layanan perpustakaan berbasis digital di lingkungan kampus.</p>
+          <p class="text-xs text-gray-500 mt-2">🗓️ 22 Februari 2024</p>
+          <a href="#" class="inline-block mt-4 text-green-600 hover:text-green-800 font-medium">Lihat Dokumen →</a>
+        </div>
+
+        <!-- Tambahkan lebih banyak dokumen sesuai kebutuhan -->
+      </div>
+
+      <!-- Setelah grid dokumen -->
+      <div class="mt-8 flex justify-between items-center border-t pt-4 text-sm text-gray-600">
+        <p>Menampilkan 1–8 dari 23 dokumen</p>
+        <div class="space-x-2">
+          <button class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100 disabled:opacity-40" disabled>
+            Previous
+          </button>
+          <button class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100 font-semibold bg-gray-200">
+            1
+          </button>
+          <button class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100">
+            2
+          </button>
+          <button class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100">
+            Next
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#333333] text-white py-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <img src="logo-perpus-putih.png" alt="Logo Perpustakaan UPNVJ" class="h-12 mb-4">
+        <p class="text-sm">UPT Perpustakaan UPN Veteran Jakarta merupakan unit pelaksana teknis di bidang perpustakaan yang mempunyai tugas melaksanakan pemberian layanan kepustakaan.</p>
+        <div class="flex space-x-4 mt-4">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <img src="Icon/Footer/facebook-round-color-icon.svg" alt="Facebook" class="h-6">
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <img src="Icon/Footer/ig-instagram-icon.svg" alt="Instagram" class="h-6">
+          </a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+            <img src="Icon/Footer/youtube-color-icon.svg" alt="YouTube" class="h-6">
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-lg text-[#38b000]  font-semibold mb-4">Alamat</h3>
+        <p class="text-sm">Kampus UPN "Veteran" Jakarta Gedung DR. Soetomo Lt. 3 dan Lt. 4 Jl. R.S. Fatmawati Pondok Labu - Jakarta Selatan 12450</p>
+        <p class="text-sm mt-2"><strong>Telepon:</strong> 021-75902835</p>
+        <p class="text-sm">
+          <strong>WhatsApp:</strong>
+          <a href="https://wa.me/6281234567890" target="_blank" class="text-[#38b000] font-bold hover:underline ml-1">+62 858-1159-1970</a><br>
+          <a href="https://wa.me/6289876543210" target="_blank" class="text-[#38b000] font-bold hover:underline ml-[87px]">+62 858-1159-1971</a>
+        </p>
+        <p class="text-sm"><strong>Email:</strong> <a href="mailto:library@upnvj.ac.id" class="text-[#38b000] hover:underline">library@upnvj.ac.id</a></p>
+      </div>
+      <div>
+        <h3 class="text-lg text-[#38b000] font-semibold mb-4">Lokasi</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d809.9323967591235!2d106.79483065675534!3d-6.3158380944621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69efc9a877deff%3A0x702518832f089921!2sPerpustakaan%20UPN%20Veteran%20Jakarta!5e0!3m2!1sen!2sid!4v1745768110809!5m2!1sen!2sid"
+          width="100%" 
+          height="150" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          class="rounded-lg">
+        </iframe>
+      </div>
+    </div>
+    <div class="text-center text-sm mt-8 border-t border-gray-700 pt-4">
+      &copy; 2025 Perpustakaan UPNVJ. All rights reserved.
+    </div>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
